@@ -1,0 +1,422 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		C356319B1D7B1EB7002A22C4 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = C356319A1D7B1EB7002A22C4 /* AppDelegate.swift */; };
+		C356319D1D7B1EB7002A22C4 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C356319C1D7B1EB7002A22C4 /* ViewController.swift */; };
+		C35631A01D7B1EB8002A22C4 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C356319E1D7B1EB8002A22C4 /* Main.storyboard */; };
+		C35631A31D7B1EB8002A22C4 /* SportsCalendarPlanner.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = C35631A11D7B1EB8002A22C4 /* SportsCalendarPlanner.xcdatamodeld */; };
+		C35631A51D7B1EB8002A22C4 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = C35631A41D7B1EB8002A22C4 /* Assets.xcassets */; };
+		C35631A81D7B1EB8002A22C4 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C35631A61D7B1EB8002A22C4 /* LaunchScreen.storyboard */; };
+		C35631B31D7B1EB8002A22C4 /* SportsCalendarPlannerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = C35631B21D7B1EB8002A22C4 /* SportsCalendarPlannerTests.swift */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		C35631AF1D7B1EB8002A22C4 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = C356318F1D7B1EB7002A22C4 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = C35631961D7B1EB7002A22C4;
+			remoteInfo = SportsCalendarPlanner;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		C35631971D7B1EB7002A22C4 /* SportsCalendarPlanner.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SportsCalendarPlanner.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		C356319A1D7B1EB7002A22C4 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		C356319C1D7B1EB7002A22C4 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		C356319F1D7B1EB8002A22C4 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		C35631A21D7B1EB8002A22C4 /* SportsCalendarPlanner.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = SportsCalendarPlanner.xcdatamodel; sourceTree = "<group>"; };
+		C35631A41D7B1EB8002A22C4 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		C35631A71D7B1EB8002A22C4 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		C35631A91D7B1EB8002A22C4 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		C35631AE1D7B1EB8002A22C4 /* SportsCalendarPlannerTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = SportsCalendarPlannerTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		C35631B21D7B1EB8002A22C4 /* SportsCalendarPlannerTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SportsCalendarPlannerTests.swift; sourceTree = "<group>"; };
+		C35631B41D7B1EB8002A22C4 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		C35631941D7B1EB7002A22C4 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		C35631AB1D7B1EB8002A22C4 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		C356318E1D7B1EB7002A22C4 = {
+			isa = PBXGroup;
+			children = (
+				C35631991D7B1EB7002A22C4 /* SportsCalendarPlanner */,
+				C35631B11D7B1EB8002A22C4 /* SportsCalendarPlannerTests */,
+				C35631981D7B1EB7002A22C4 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		C35631981D7B1EB7002A22C4 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				C35631971D7B1EB7002A22C4 /* SportsCalendarPlanner.app */,
+				C35631AE1D7B1EB8002A22C4 /* SportsCalendarPlannerTests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		C35631991D7B1EB7002A22C4 /* SportsCalendarPlanner */ = {
+			isa = PBXGroup;
+			children = (
+				C356319A1D7B1EB7002A22C4 /* AppDelegate.swift */,
+				C356319C1D7B1EB7002A22C4 /* ViewController.swift */,
+				C356319E1D7B1EB8002A22C4 /* Main.storyboard */,
+				C35631A41D7B1EB8002A22C4 /* Assets.xcassets */,
+				C35631A61D7B1EB8002A22C4 /* LaunchScreen.storyboard */,
+				C35631A91D7B1EB8002A22C4 /* Info.plist */,
+				C35631A11D7B1EB8002A22C4 /* SportsCalendarPlanner.xcdatamodeld */,
+			);
+			path = SportsCalendarPlanner;
+			sourceTree = "<group>";
+		};
+		C35631B11D7B1EB8002A22C4 /* SportsCalendarPlannerTests */ = {
+			isa = PBXGroup;
+			children = (
+				C35631B21D7B1EB8002A22C4 /* SportsCalendarPlannerTests.swift */,
+				C35631B41D7B1EB8002A22C4 /* Info.plist */,
+			);
+			path = SportsCalendarPlannerTests;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		C35631961D7B1EB7002A22C4 /* SportsCalendarPlanner */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = C35631B71D7B1EB8002A22C4 /* Build configuration list for PBXNativeTarget "SportsCalendarPlanner" */;
+			buildPhases = (
+				C35631931D7B1EB7002A22C4 /* Sources */,
+				C35631941D7B1EB7002A22C4 /* Frameworks */,
+				C35631951D7B1EB7002A22C4 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = SportsCalendarPlanner;
+			productName = SportsCalendarPlanner;
+			productReference = C35631971D7B1EB7002A22C4 /* SportsCalendarPlanner.app */;
+			productType = "com.apple.product-type.application";
+		};
+		C35631AD1D7B1EB8002A22C4 /* SportsCalendarPlannerTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = C35631BA1D7B1EB8002A22C4 /* Build configuration list for PBXNativeTarget "SportsCalendarPlannerTests" */;
+			buildPhases = (
+				C35631AA1D7B1EB8002A22C4 /* Sources */,
+				C35631AB1D7B1EB8002A22C4 /* Frameworks */,
+				C35631AC1D7B1EB8002A22C4 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				C35631B01D7B1EB8002A22C4 /* PBXTargetDependency */,
+			);
+			name = SportsCalendarPlannerTests;
+			productName = SportsCalendarPlannerTests;
+			productReference = C35631AE1D7B1EB8002A22C4 /* SportsCalendarPlannerTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		C356318F1D7B1EB7002A22C4 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastSwiftUpdateCheck = 0720;
+				LastUpgradeCheck = 0720;
+				ORGANIZATIONNAME = "Tomas Van Roose";
+				TargetAttributes = {
+					C35631961D7B1EB7002A22C4 = {
+						CreatedOnToolsVersion = 7.2;
+						DevelopmentTeam = SJ2775C239;
+					};
+					C35631AD1D7B1EB8002A22C4 = {
+						CreatedOnToolsVersion = 7.2;
+						DevelopmentTeam = SJ2775C239;
+						TestTargetID = C35631961D7B1EB7002A22C4;
+					};
+				};
+			};
+			buildConfigurationList = C35631921D7B1EB7002A22C4 /* Build configuration list for PBXProject "SportsCalendarPlanner" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = C356318E1D7B1EB7002A22C4;
+			productRefGroup = C35631981D7B1EB7002A22C4 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				C35631961D7B1EB7002A22C4 /* SportsCalendarPlanner */,
+				C35631AD1D7B1EB8002A22C4 /* SportsCalendarPlannerTests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		C35631951D7B1EB7002A22C4 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				C35631A81D7B1EB8002A22C4 /* LaunchScreen.storyboard in Resources */,
+				C35631A51D7B1EB8002A22C4 /* Assets.xcassets in Resources */,
+				C35631A01D7B1EB8002A22C4 /* Main.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		C35631AC1D7B1EB8002A22C4 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		C35631931D7B1EB7002A22C4 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				C356319D1D7B1EB7002A22C4 /* ViewController.swift in Sources */,
+				C356319B1D7B1EB7002A22C4 /* AppDelegate.swift in Sources */,
+				C35631A31D7B1EB8002A22C4 /* SportsCalendarPlanner.xcdatamodeld in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		C35631AA1D7B1EB8002A22C4 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				C35631B31D7B1EB8002A22C4 /* SportsCalendarPlannerTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		C35631B01D7B1EB8002A22C4 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = C35631961D7B1EB7002A22C4 /* SportsCalendarPlanner */;
+			targetProxy = C35631AF1D7B1EB8002A22C4 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		C356319E1D7B1EB8002A22C4 /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				C356319F1D7B1EB8002A22C4 /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		C35631A61D7B1EB8002A22C4 /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				C35631A71D7B1EB8002A22C4 /* Base */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		C35631B51D7B1EB8002A22C4 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.2;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				TARGETED_DEVICE_FAMILY = 2;
+			};
+			name = Debug;
+		};
+		C35631B61D7B1EB8002A22C4 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.2;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				SDKROOT = iphoneos;
+				TARGETED_DEVICE_FAMILY = 2;
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		C35631B81D7B1EB8002A22C4 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				INFOPLIST_FILE = SportsCalendarPlanner/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.tvr.SportsCalendarPlanner;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Debug;
+		};
+		C35631B91D7B1EB8002A22C4 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				INFOPLIST_FILE = SportsCalendarPlanner/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.tvr.SportsCalendarPlanner;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Release;
+		};
+		C35631BB1D7B1EB8002A22C4 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				INFOPLIST_FILE = SportsCalendarPlannerTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.tvr.SportsCalendarPlannerTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/SportsCalendarPlanner.app/SportsCalendarPlanner";
+			};
+			name = Debug;
+		};
+		C35631BC1D7B1EB8002A22C4 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				INFOPLIST_FILE = SportsCalendarPlannerTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.tvr.SportsCalendarPlannerTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/SportsCalendarPlanner.app/SportsCalendarPlanner";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		C35631921D7B1EB7002A22C4 /* Build configuration list for PBXProject "SportsCalendarPlanner" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				C35631B51D7B1EB8002A22C4 /* Debug */,
+				C35631B61D7B1EB8002A22C4 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		C35631B71D7B1EB8002A22C4 /* Build configuration list for PBXNativeTarget "SportsCalendarPlanner" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				C35631B81D7B1EB8002A22C4 /* Debug */,
+				C35631B91D7B1EB8002A22C4 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+		C35631BA1D7B1EB8002A22C4 /* Build configuration list for PBXNativeTarget "SportsCalendarPlannerTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				C35631BB1D7B1EB8002A22C4 /* Debug */,
+				C35631BC1D7B1EB8002A22C4 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+/* End XCConfigurationList section */
+
+/* Begin XCVersionGroup section */
+		C35631A11D7B1EB8002A22C4 /* SportsCalendarPlanner.xcdatamodeld */ = {
+			isa = XCVersionGroup;
+			children = (
+				C35631A21D7B1EB8002A22C4 /* SportsCalendarPlanner.xcdatamodel */,
+			);
+			currentVersion = C35631A21D7B1EB8002A22C4 /* SportsCalendarPlanner.xcdatamodel */;
+			path = SportsCalendarPlanner.xcdatamodeld;
+			sourceTree = "<group>";
+			versionGroupType = wrapper.xcdatamodel;
+		};
+/* End XCVersionGroup section */
+	};
+	rootObject = C356318F1D7B1EB7002A22C4 /* Project object */;
+}

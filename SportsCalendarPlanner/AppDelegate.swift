@@ -16,7 +16,12 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
 
     func application(application: UIApplication, didFinishLaunchingWithOptions launchOptions: [NSObject: AnyObject]?) -> Bool {
-        // Override point for customization after application launch.
+        
+        let splitViewController = self.window!.rootViewController as? UISplitViewController
+        let navigationController = splitViewController?.viewControllers.first as? UINavigationController
+        let seasonsTableViewController = navigationController!.topViewController as? SeasonsTableViewController
+        seasonsTableViewController!.managedObjectContext = self.managedObjectContext
+        
         return true
     }
 

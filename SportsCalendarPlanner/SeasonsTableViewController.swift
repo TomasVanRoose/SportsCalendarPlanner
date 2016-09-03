@@ -8,11 +8,17 @@
 
 import UIKit
 
-class SeasonsTableViewController: UITableViewController {
+import CoreData
 
+class SeasonsTableViewController: UITableViewController, NSFetchedResultsControllerDelegate {
+
+    var managedObjectContext: NSManagedObjectContext?
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
+        initializeFetchedResultsController()
+        
         // Uncomment the following line to preserve selection between presentations
         // self.clearsSelectionOnViewWillAppear = false
 
@@ -91,5 +97,24 @@ class SeasonsTableViewController: UITableViewController {
         // Pass the selected object to the new view controller.
     }
     */
+    
+    // MARK: - Core Data
+    var fetchedResultsController: NSFetchedResultsController!
+    
+    func initializeFetchedResultsController() {
+        let request = NSFetchRequest(entityName: "Season")
+        let nameSort = NSSortDescriptor(key: "name", ascending: true)
+        request.sortDescriptors = [ nameSort ]
+        
+        //let moc = self.dataController.managedObjectContext
+        fetchedResultsController = NSFetchedResultsController(fetchRequest: request, managedObjectContext: self.managedObjectContext!, sectionNameKeyPath: "name", cacheName: "rootCache")
+        fetchedResultsController.delegate = self
+        
+        do {
+            try fetchedResultsController.performFetch()
+        } catch {
+            fatalError("Failed to initialize FetchedResultsController: \(error)")
+        }
+    }
 
 }

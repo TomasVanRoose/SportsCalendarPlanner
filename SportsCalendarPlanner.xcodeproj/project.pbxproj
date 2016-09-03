@@ -13,6 +13,8 @@
 		C35631A51D7B1EB8002A22C4 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = C35631A41D7B1EB8002A22C4 /* Assets.xcassets */; };
 		C35631A81D7B1EB8002A22C4 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C35631A61D7B1EB8002A22C4 /* LaunchScreen.storyboard */; };
 		C35631B31D7B1EB8002A22C4 /* SportsCalendarPlannerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = C35631B21D7B1EB8002A22C4 /* SportsCalendarPlannerTests.swift */; };
+		C35631C41D7B24F4002A22C4 /* SeasonsTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C35631C31D7B24F4002A22C4 /* SeasonsTableViewController.swift */; };
+		C35631C51D7B24F4002A22C4 /* SeasonsTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C35631C31D7B24F4002A22C4 /* SeasonsTableViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -36,6 +38,7 @@
 		C35631AE1D7B1EB8002A22C4 /* SportsCalendarPlannerTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = SportsCalendarPlannerTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		C35631B21D7B1EB8002A22C4 /* SportsCalendarPlannerTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SportsCalendarPlannerTests.swift; sourceTree = "<group>"; };
 		C35631B41D7B1EB8002A22C4 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		C35631C31D7B24F4002A22C4 /* SeasonsTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SeasonsTableViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -78,6 +81,7 @@
 			isa = PBXGroup;
 			children = (
 				C356319A1D7B1EB7002A22C4 /* AppDelegate.swift */,
+				C35631C31D7B24F4002A22C4 /* SeasonsTableViewController.swift */,
 				C356319E1D7B1EB8002A22C4 /* Main.storyboard */,
 				C35631A41D7B1EB8002A22C4 /* Assets.xcassets */,
 				C35631A61D7B1EB8002A22C4 /* LaunchScreen.storyboard */,
@@ -201,6 +205,7 @@
 			files = (
 				C356319B1D7B1EB7002A22C4 /* AppDelegate.swift in Sources */,
 				C35631A31D7B1EB8002A22C4 /* SportsCalendarPlanner.xcdatamodeld in Sources */,
+				C35631C41D7B24F4002A22C4 /* SeasonsTableViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -208,6 +213,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				C35631C51D7B24F4002A22C4 /* SeasonsTableViewController.swift in Sources */,
 				C35631B31D7B1EB8002A22C4 /* SportsCalendarPlannerTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -333,6 +339,7 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.tvr.SportsCalendarPlanner;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				TARGETED_DEVICE_FAMILY = 2;
 			};
 			name = Debug;
 		};
@@ -344,6 +351,7 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.tvr.SportsCalendarPlanner;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				TARGETED_DEVICE_FAMILY = 2;
 			};
 			name = Release;
 		};

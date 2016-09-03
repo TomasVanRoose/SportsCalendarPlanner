@@ -8,7 +8,6 @@
 
 /* Begin PBXBuildFile section */
 		C356319B1D7B1EB7002A22C4 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = C356319A1D7B1EB7002A22C4 /* AppDelegate.swift */; };
-		C356319D1D7B1EB7002A22C4 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C356319C1D7B1EB7002A22C4 /* ViewController.swift */; };
 		C35631A01D7B1EB8002A22C4 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C356319E1D7B1EB8002A22C4 /* Main.storyboard */; };
 		C35631A31D7B1EB8002A22C4 /* SportsCalendarPlanner.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = C35631A11D7B1EB8002A22C4 /* SportsCalendarPlanner.xcdatamodeld */; };
 		C35631A51D7B1EB8002A22C4 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = C35631A41D7B1EB8002A22C4 /* Assets.xcassets */; };
@@ -29,7 +28,6 @@
 /* Begin PBXFileReference section */
 		C35631971D7B1EB7002A22C4 /* SportsCalendarPlanner.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SportsCalendarPlanner.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		C356319A1D7B1EB7002A22C4 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		C356319C1D7B1EB7002A22C4 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		C356319F1D7B1EB8002A22C4 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		C35631A21D7B1EB8002A22C4 /* SportsCalendarPlanner.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = SportsCalendarPlanner.xcdatamodel; sourceTree = "<group>"; };
 		C35631A41D7B1EB8002A22C4 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -80,7 +78,6 @@
 			isa = PBXGroup;
 			children = (
 				C356319A1D7B1EB7002A22C4 /* AppDelegate.swift */,
-				C356319C1D7B1EB7002A22C4 /* ViewController.swift */,
 				C356319E1D7B1EB8002A22C4 /* Main.storyboard */,
 				C35631A41D7B1EB8002A22C4 /* Assets.xcassets */,
 				C35631A61D7B1EB8002A22C4 /* LaunchScreen.storyboard */,
@@ -202,7 +199,6 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				C356319D1D7B1EB7002A22C4 /* ViewController.swift in Sources */,
 				C356319B1D7B1EB7002A22C4 /* AppDelegate.swift in Sources */,
 				C35631A31D7B1EB8002A22C4 /* SportsCalendarPlanner.xcdatamodeld in Sources */,
 			);

@@ -11,10 +11,10 @@
 		C3352BC01D7C1C9A00D10A9D /* InputTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C3352BBE1D7C1C9A00D10A9D /* InputTableViewController.swift */; };
 		C3352BC21D7C2A4900D10A9D /* TeamsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C3352BC11D7C2A4900D10A9D /* TeamsViewController.swift */; };
 		C3352BC31D7C2A4900D10A9D /* TeamsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C3352BC11D7C2A4900D10A9D /* TeamsViewController.swift */; };
-		C3352BC61D7C304400D10A9D /* Team+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = C3352BC41D7C304400D10A9D /* Team+CoreDataProperties.swift */; };
-		C3352BC71D7C304400D10A9D /* Team+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = C3352BC41D7C304400D10A9D /* Team+CoreDataProperties.swift */; };
-		C3352BC81D7C304400D10A9D /* Team.swift in Sources */ = {isa = PBXBuildFile; fileRef = C3352BC51D7C304400D10A9D /* Team.swift */; };
-		C3352BC91D7C304400D10A9D /* Team.swift in Sources */ = {isa = PBXBuildFile; fileRef = C3352BC51D7C304400D10A9D /* Team.swift */; };
+		C3352BCC1D7C384500D10A9D /* TeamMO+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = C3352BCA1D7C384500D10A9D /* TeamMO+CoreDataProperties.swift */; };
+		C3352BCD1D7C384500D10A9D /* TeamMO+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = C3352BCA1D7C384500D10A9D /* TeamMO+CoreDataProperties.swift */; };
+		C3352BCE1D7C384500D10A9D /* TeamMO.swift in Sources */ = {isa = PBXBuildFile; fileRef = C3352BCB1D7C384500D10A9D /* TeamMO.swift */; };
+		C3352BCF1D7C384500D10A9D /* TeamMO.swift in Sources */ = {isa = PBXBuildFile; fileRef = C3352BCB1D7C384500D10A9D /* TeamMO.swift */; };
 		C356319B1D7B1EB7002A22C4 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = C356319A1D7B1EB7002A22C4 /* AppDelegate.swift */; };
 		C35631A01D7B1EB8002A22C4 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C356319E1D7B1EB8002A22C4 /* Main.storyboard */; };
 		C35631A31D7B1EB8002A22C4 /* SportsCalendarPlanner.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = C35631A11D7B1EB8002A22C4 /* SportsCalendarPlanner.xcdatamodeld */; };
@@ -46,8 +46,8 @@
 /* Begin PBXFileReference section */
 		C3352BBE1D7C1C9A00D10A9D /* InputTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = InputTableViewController.swift; sourceTree = "<group>"; };
 		C3352BC11D7C2A4900D10A9D /* TeamsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TeamsViewController.swift; sourceTree = "<group>"; };
-		C3352BC41D7C304400D10A9D /* Team+CoreDataProperties.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Team+CoreDataProperties.swift"; sourceTree = "<group>"; };
-		C3352BC51D7C304400D10A9D /* Team.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Team.swift; sourceTree = "<group>"; };
+		C3352BCA1D7C384500D10A9D /* TeamMO+CoreDataProperties.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "TeamMO+CoreDataProperties.swift"; sourceTree = "<group>"; };
+		C3352BCB1D7C384500D10A9D /* TeamMO.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TeamMO.swift; sourceTree = "<group>"; };
 		C35631971D7B1EB7002A22C4 /* SportsCalendarPlanner.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SportsCalendarPlanner.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		C356319A1D7B1EB7002A22C4 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		C356319F1D7B1EB8002A22C4 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -107,9 +107,9 @@
 				C356319A1D7B1EB7002A22C4 /* AppDelegate.swift */,
 				C35631C31D7B24F4002A22C4 /* SeasonsTableViewController.swift */,
 				C3352BC11D7C2A4900D10A9D /* TeamsViewController.swift */,
+				C356319E1D7B1EB8002A22C4 /* Main.storyboard */,
 				C3B22DCC1D7C05350051ABC5 /* NewSeasonTableViewController.swift */,
 				C3352BBE1D7C1C9A00D10A9D /* InputTableViewController.swift */,
-				C356319E1D7B1EB8002A22C4 /* Main.storyboard */,
 				C35631D81D7B5761002A22C4 /* Core Data */,
 				C35631D41D7B517D002A22C4 /* Extras */,
 				C35631A11D7B1EB8002A22C4 /* SportsCalendarPlanner.xcdatamodeld */,
@@ -139,8 +139,8 @@
 		C35631D81D7B5761002A22C4 /* Core Data */ = {
 			isa = PBXGroup;
 			children = (
-				C3352BC41D7C304400D10A9D /* Team+CoreDataProperties.swift */,
-				C3352BC51D7C304400D10A9D /* Team.swift */,
+				C3352BCA1D7C384500D10A9D /* TeamMO+CoreDataProperties.swift */,
+				C3352BCB1D7C384500D10A9D /* TeamMO.swift */,
 				C35631CE1D7B5091002A22C4 /* SeasonMO+CoreDataProperties.swift */,
 				C35631CF1D7B5091002A22C4 /* SeasonMO.swift */,
 				C35631D51D7B542B002A22C4 /* CoreDataTableViewController.swift */,
@@ -251,15 +251,15 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				C3352BCC1D7C384500D10A9D /* TeamMO+CoreDataProperties.swift in Sources */,
 				C3352BBF1D7C1C9A00D10A9D /* InputTableViewController.swift in Sources */,
 				C3B22DCD1D7C05350051ABC5 /* NewSeasonTableViewController.swift in Sources */,
 				C35631D01D7B5091002A22C4 /* SeasonMO+CoreDataProperties.swift in Sources */,
 				C356319B1D7B1EB7002A22C4 /* AppDelegate.swift in Sources */,
-				C3352BC61D7C304400D10A9D /* Team+CoreDataProperties.swift in Sources */,
+				C3352BCE1D7C384500D10A9D /* TeamMO.swift in Sources */,
 				C35631D61D7B542B002A22C4 /* CoreDataTableViewController.swift in Sources */,
 				C35631D21D7B5091002A22C4 /* SeasonMO.swift in Sources */,
 				C35631A31D7B1EB8002A22C4 /* SportsCalendarPlanner.xcdatamodeld in Sources */,
-				C3352BC81D7C304400D10A9D /* Team.swift in Sources */,
 				C3352BC21D7C2A4900D10A9D /* TeamsViewController.swift in Sources */,
 				C35631C41D7B24F4002A22C4 /* SeasonsTableViewController.swift in Sources */,
 			);
@@ -272,12 +272,12 @@
 				C3352BC01D7C1C9A00D10A9D /* InputTableViewController.swift in Sources */,
 				C35631C51D7B24F4002A22C4 /* SeasonsTableViewController.swift in Sources */,
 				C35631B31D7B1EB8002A22C4 /* SportsCalendarPlannerTests.swift in Sources */,
-				C3352BC71D7C304400D10A9D /* Team+CoreDataProperties.swift in Sources */,
+				C3352BCD1D7C384500D10A9D /* TeamMO+CoreDataProperties.swift in Sources */,
 				C35631D31D7B5091002A22C4 /* SeasonMO.swift in Sources */,
+				C3352BCF1D7C384500D10A9D /* TeamMO.swift in Sources */,
 				C35631D71D7B542B002A22C4 /* CoreDataTableViewController.swift in Sources */,
 				C3352BC31D7C2A4900D10A9D /* TeamsViewController.swift in Sources */,
 				C35631D11D7B5091002A22C4 /* SeasonMO+CoreDataProperties.swift in Sources */,
-				C3352BC91D7C304400D10A9D /* Team.swift in Sources */,
 				C3B22DCE1D7C05350051ABC5 /* NewSeasonTableViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

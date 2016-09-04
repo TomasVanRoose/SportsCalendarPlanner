@@ -1,5 +1,5 @@
 //
-//  Team+CoreDataProperties.swift
+//  TeamMO+CoreDataProperties.swift
 //  SportsCalendarPlanner
 //
 //  Created by Tomas Van Roose on 04/09/16.
@@ -12,7 +12,7 @@
 import Foundation
 import CoreData
 
-extension Team {
+extension TeamMO {
 
     @NSManaged var name: String?
     @NSManaged var season: SeasonMO?

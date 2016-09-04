@@ -19,7 +19,7 @@ class CoreDataTableViewController: UITableViewController, NSFetchedResultsContro
         preconditionFailure("This method must be overridden")
     }
     
-    func configureCell(cell: UITableViewCell, indexPath: NSIndexPath) {
+    func configureCell(indexPath: NSIndexPath) -> (UITableViewCell) {
         preconditionFailure("This method must be overridden")
     }
     
@@ -40,11 +40,9 @@ class CoreDataTableViewController: UITableViewController, NSFetchedResultsContro
     }
     
     override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCellWithIdentifier("season", forIndexPath: indexPath)
         
-        configureCell(cell, indexPath: indexPath)
-        
-        return cell
+        return configureCell(indexPath)
+
     }
     
     
@@ -72,7 +70,7 @@ class CoreDataTableViewController: UITableViewController, NSFetchedResultsContro
         case .Delete:
             tableView.deleteRowsAtIndexPaths([indexPath!], withRowAnimation: .Fade)
         case .Update:
-            configureCell(self.tableView.cellForRowAtIndexPath(indexPath!)!, indexPath: indexPath!)
+            _ = configureCell(indexPath!)
         case .Move:
             tableView.deleteRowsAtIndexPaths([indexPath!], withRowAnimation: .Fade)
             tableView.insertRowsAtIndexPaths([indexPath!], withRowAnimation: .Fade)

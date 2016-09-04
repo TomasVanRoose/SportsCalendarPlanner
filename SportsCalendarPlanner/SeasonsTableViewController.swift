@@ -22,12 +22,15 @@ class SeasonsTableViewController: CoreDataTableViewController {
 
     // MARK: - Table view data source
     
-    override func configureCell(cell: UITableViewCell, indexPath: NSIndexPath) {
+    override func configureCell(indexPath: NSIndexPath) -> (UITableViewCell) {
         
-        let season = fetchedResultsController.objectAtIndexPath(indexPath) as! SeasonMO
+        let cell = self.tableView.dequeueReusableCellWithIdentifier("season")!
         
-        cell.textLabel!.text! = season.name!;
+        let season = self.fetchedResultsController.objectAtIndexPath(indexPath) as! SeasonMO
         
+        cell.textLabel!.text! = season.name!
+        
+        return cell
     }
     
     // MARK: - Navigation
@@ -45,6 +48,7 @@ class SeasonsTableViewController: CoreDataTableViewController {
             let season = self.fetchedResultsController.objectAtIndexPath(indexPath) as! SeasonMO
             
             destination.season = season
+            destination.managedObjectContext = self.managedObjectContext
         }
 
     }
@@ -69,9 +73,8 @@ class SeasonsTableViewController: CoreDataTableViewController {
         let nameSort = NSSortDescriptor(key: "name", ascending: true)
         request.sortDescriptors = [ nameSort ]
         
-        //let moc = self.dataController.managedObjectContext
-        fetchedResultsController = NSFetchedResultsController(fetchRequest: request, managedObjectContext: self.managedObjectContext!, sectionNameKeyPath: nil, cacheName: nil)
-        fetchedResultsController.delegate = self
+        self.fetchedResultsController = NSFetchedResultsController(fetchRequest: request, managedObjectContext: self.managedObjectContext!, sectionNameKeyPath: nil, cacheName: nil)
+        self.fetchedResultsController.delegate = self
         
         do {
             try fetchedResultsController.performFetch()

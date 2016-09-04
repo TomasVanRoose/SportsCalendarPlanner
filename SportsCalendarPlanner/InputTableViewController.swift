@@ -23,6 +23,10 @@ class InputTableViewController: UITableViewController {
         if let inputString = inputTextField.text {
             didInputFunc?(inputString)
             self.navigationController?.popViewControllerAnimated(true)
+            self.dismissViewControllerAnimated(true, completion: nil)
         }
+    }
+    @IBAction func cancel(sender: UIBarButtonItem) {
+        self.dismissViewControllerAnimated(true, completion: nil)
     }
 }

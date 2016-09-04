@@ -11,6 +11,9 @@ import Foundation
 
 class NewSeasonTableViewController: UIViewController, UITableViewDataSource, UITableViewDelegate {
 
+    // Set this function in the calling class to get the saved values
+    var didSaveFunc : ((name : String, startDate : NSDate, endDate : NSDate) -> ())?
+    
     @IBOutlet private weak var datePicker: UIDatePicker!
     @IBOutlet weak var tableView: UITableView!
     
@@ -49,13 +52,17 @@ class NewSeasonTableViewController: UIViewController, UITableViewDataSource, UIT
         if indexPath.section == 0 {
             cell = tableView.dequeueReusableCellWithIdentifier("seasonName")!
             cell.textLabel!.text! = "Name"
-            cell.detailTextLabel!.text! = "Ongetiteld Seizoen"
+            
+            if let name = self.name {
+                cell.detailTextLabel!.text! = name
+            } else {
+                cell.detailTextLabel!.text! = "Untitled Season"
+            }
+            
         } else {
             
             let formatter = NSDateFormatter()
-            let locale = NSLocale(localeIdentifier: "nl_BE")
             formatter.dateStyle = .LongStyle
-            formatter.locale = locale
             
             cell = tableView.dequeueReusableCellWithIdentifier("seasonDate")!
             
@@ -104,12 +111,21 @@ class NewSeasonTableViewController: UIViewController, UITableViewDataSource, UIT
             self.tableView.selectRowAtIndexPath(indexPath, animated: false, scrollPosition: .None)
         }
     }
+    
     // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
+    
+    func didInputString(inputString : String) {
+        self.name = inputString
+        self.tableView.reloadData()
+    }
+    
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
-        // Get the new view controller using segue.destinationViewController.
-        // Pass the selected object to the new view controller.
+        
+        if let destination = segue.destinationViewController as? InputTableViewController {
+            destination.title = "Name of season"
+            destination.didInputFunc = didInputString
+        }
+        
     }
     
     @IBAction func cancel(sender: UIBarButtonItem) {
@@ -117,7 +133,11 @@ class NewSeasonTableViewController: UIViewController, UITableViewDataSource, UIT
     }
     
     @IBAction func save(sender: UIBarButtonItem) {
-        
+        if let name = self.name {
+            
+            self.didSaveFunc?(name: name, startDate: self.startDate!, endDate: self.endDate!)
+            self.dismissViewControllerAnimated(true, completion: nil)
+        }
     }
 
 }

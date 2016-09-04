@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		C3352BBF1D7C1C9A00D10A9D /* InputTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C3352BBE1D7C1C9A00D10A9D /* InputTableViewController.swift */; };
+		C3352BC01D7C1C9A00D10A9D /* InputTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C3352BBE1D7C1C9A00D10A9D /* InputTableViewController.swift */; };
 		C356319B1D7B1EB7002A22C4 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = C356319A1D7B1EB7002A22C4 /* AppDelegate.swift */; };
 		C35631A01D7B1EB8002A22C4 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C356319E1D7B1EB8002A22C4 /* Main.storyboard */; };
 		C35631A31D7B1EB8002A22C4 /* SportsCalendarPlanner.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = C35631A11D7B1EB8002A22C4 /* SportsCalendarPlanner.xcdatamodeld */; };
@@ -36,6 +38,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		C3352BBE1D7C1C9A00D10A9D /* InputTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = InputTableViewController.swift; sourceTree = "<group>"; };
 		C35631971D7B1EB7002A22C4 /* SportsCalendarPlanner.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SportsCalendarPlanner.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		C356319A1D7B1EB7002A22C4 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		C356319F1D7B1EB8002A22C4 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -95,6 +98,7 @@
 				C356319A1D7B1EB7002A22C4 /* AppDelegate.swift */,
 				C35631C31D7B24F4002A22C4 /* SeasonsTableViewController.swift */,
 				C3B22DCC1D7C05350051ABC5 /* NewSeasonTableViewController.swift */,
+				C3352BBE1D7C1C9A00D10A9D /* InputTableViewController.swift */,
 				C356319E1D7B1EB8002A22C4 /* Main.storyboard */,
 				C35631D81D7B5761002A22C4 /* Core Data */,
 				C35631D41D7B517D002A22C4 /* Extras */,
@@ -235,6 +239,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				C3352BBF1D7C1C9A00D10A9D /* InputTableViewController.swift in Sources */,
 				C3B22DCD1D7C05350051ABC5 /* NewSeasonTableViewController.swift in Sources */,
 				C35631D01D7B5091002A22C4 /* SeasonMO+CoreDataProperties.swift in Sources */,
 				C356319B1D7B1EB7002A22C4 /* AppDelegate.swift in Sources */,
@@ -249,6 +254,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				C3352BC01D7C1C9A00D10A9D /* InputTableViewController.swift in Sources */,
 				C35631C51D7B24F4002A22C4 /* SeasonsTableViewController.swift in Sources */,
 				C35631B31D7B1EB8002A22C4 /* SportsCalendarPlannerTests.swift in Sources */,
 				C35631D31D7B5091002A22C4 /* SeasonMO.swift in Sources */,

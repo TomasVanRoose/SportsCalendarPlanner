@@ -63,6 +63,9 @@
                                                 </label>
                                             </subviews>
                                         </tableViewCellContentView>
+                                        <connections>
+                                            <segue destination="Z7z-uU-EBk" kind="show" identifier="inputName" id="XY6-uk-hQP"/>
+                                        </connections>
                                     </tableViewCell>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="seasonDate" textLabel="Tek-0j-hVT" detailTextLabel="0Uy-dd-bSw" style="IBUITableViewCellStyleValue1" id="3rn-f2-fgd">
                                         <rect key="frame" x="0.0" y="158" width="600" height="44"/>
@@ -126,6 +129,56 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="JqO-lI-l12" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="2578" y="-1353"/>
+        </scene>
+        <!--Title-->
+        <scene sceneID="HDL-0E-NdP">
+            <objects>
+                <tableViewController id="Z7z-uU-EBk" customClass="InputTableViewController" customModule="SportsCalendarPlanner" customModuleProvider="target" sceneMemberID="viewController">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="static" style="grouped" separatorStyle="default" rowHeight="44" sectionHeaderHeight="18" sectionFooterHeight="18" id="Lvv-a3-61p">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
+                        <sections>
+                            <tableViewSection id="VKT-hC-nst">
+                                <cells>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" id="QkP-V1-a4x">
+                                        <rect key="frame" x="0.0" y="99" width="600" height="44"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="QkP-V1-a4x" id="PTi-Od-l5v">
+                                            <rect key="frame" x="0.0" y="0.0" width="600" height="43"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="e.g. 2016 - 2017" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="F6n-s3-QD8">
+                                                    <rect key="frame" x="8" y="7" width="584" height="30"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                                    <textInputTraits key="textInputTraits"/>
+                                                </textField>
+                                            </subviews>
+                                        </tableViewCellContentView>
+                                    </tableViewCell>
+                                </cells>
+                            </tableViewSection>
+                        </sections>
+                        <connections>
+                            <outlet property="dataSource" destination="Z7z-uU-EBk" id="Hiq-eO-NJZ"/>
+                            <outlet property="delegate" destination="Z7z-uU-EBk" id="VGS-PX-nZW"/>
+                        </connections>
+                    </tableView>
+                    <toolbarItems/>
+                    <navigationItem key="navigationItem" title="Title" id="pC3-wS-wUq">
+                        <barButtonItem key="rightBarButtonItem" style="done" systemItem="save" id="DGr-KA-kvz">
+                            <connections>
+                                <action selector="save:" destination="Z7z-uU-EBk" id="BMV-Rv-a95"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
+                    <connections>
+                        <outlet property="inputTextField" destination="F6n-s3-QD8" id="VmG-JC-4lT"/>
+                    </connections>
+                </tableViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="YXH-Dm-FvG" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="3335" y="-1348"/>
         </scene>
         <!--Seasons-->
         <scene sceneID="C5Z-iN-YeE">

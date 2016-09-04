@@ -12,6 +12,17 @@ import CoreData
 @objc(SeasonMO)
 class SeasonMO: NSManagedObject {
 
-// Insert code here to add functionality to your managed object subclass
-
+    class func createNewSeason(name : String, startDate: NSDate, endDate : NSDate, forContext : NSManagedObjectContext) -> (SeasonMO) {
+        
+        let season = NSEntityDescription.insertNewObjectForEntityForName("Season", inManagedObjectContext: forContext) as! SeasonMO
+        
+        
+        season.name = name
+        season.startDate = startDate
+        season.endDate = endDate
+        
+        return season
+    }
+    
+    
 }

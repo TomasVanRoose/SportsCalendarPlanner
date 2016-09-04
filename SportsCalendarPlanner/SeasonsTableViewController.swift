@@ -27,20 +27,35 @@ class SeasonsTableViewController: CoreDataTableViewController {
         let season = fetchedResultsController.objectAtIndexPath(indexPath) as! SeasonMO
         
         cell.textLabel!.text! = season.name!;
-        cell.detailTextLabel!.text! = "\(season.startDate!) - \(season.endDate!)"
         
     }
-
     
     // MARK: - Navigation
 
     // In a storyboard-based application, you will often want to do a little preparation before navigation
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
        
+        if let destination = segue.destinationViewController as? UINavigationController {
+            if let newSeasonController = destination.topViewController as? NewSeasonTableViewController {
+                newSeasonController.didSaveFunc = seasonCreatorDidReturn
+            }
+        }
     }
     
     
     // MARK: - Core Data
+    
+    func seasonCreatorDidReturn(name : String, startDate :  NSDate, endDate : NSDate) {
+        
+        _ = SeasonMO.createNewSeason(name, startDate: startDate, endDate: endDate, forContext: self.managedObjectContext!)
+        
+        do {
+            try self.managedObjectContext!.save()
+        } catch {
+            fatalError("Failure to save context: \(error)")
+        }
+        
+    }
     
     override func initializeFetchedResultsController() {
         let request = NSFetchRequest(entityName: "Season")

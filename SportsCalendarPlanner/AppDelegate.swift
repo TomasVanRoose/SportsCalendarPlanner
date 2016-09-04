@@ -25,6 +25,8 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         let detailNavigationController = splitViewController?.viewControllers.last as? UINavigationController
         let calendarPresenter = detailNavigationController!.topViewController as? CalendarPresenterViewController
         
+        calendarPresenter?.managedObjectContext = self.managedObjectContext
+        
         seasonsTableViewController!.managedObjectContext = self.managedObjectContext
         seasonsTableViewController!.detailViewController = calendarPresenter
         

@@ -7,6 +7,10 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		C31DD6131D7C66180020FFA7 /* PlayableDateMO+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = C31DD6111D7C66180020FFA7 /* PlayableDateMO+CoreDataProperties.swift */; };
+		C31DD6141D7C66180020FFA7 /* PlayableDateMO+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = C31DD6111D7C66180020FFA7 /* PlayableDateMO+CoreDataProperties.swift */; };
+		C31DD6151D7C66180020FFA7 /* PlayableDateMO.swift in Sources */ = {isa = PBXBuildFile; fileRef = C31DD6121D7C66180020FFA7 /* PlayableDateMO.swift */; };
+		C31DD6161D7C66180020FFA7 /* PlayableDateMO.swift in Sources */ = {isa = PBXBuildFile; fileRef = C31DD6121D7C66180020FFA7 /* PlayableDateMO.swift */; };
 		C32841851D7C50B800AAD930 /* CalendarPresenterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C32841841D7C50B800AAD930 /* CalendarPresenterViewController.swift */; };
 		C32841861D7C50B800AAD930 /* CalendarPresenterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C32841841D7C50B800AAD930 /* CalendarPresenterViewController.swift */; };
 		C328418A1D7C522C00AAD930 /* DateExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = C32841871D7C522C00AAD930 /* DateExtension.swift */; };
@@ -52,6 +56,8 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		C31DD6111D7C66180020FFA7 /* PlayableDateMO+CoreDataProperties.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "PlayableDateMO+CoreDataProperties.swift"; sourceTree = "<group>"; };
+		C31DD6121D7C66180020FFA7 /* PlayableDateMO.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PlayableDateMO.swift; sourceTree = "<group>"; };
 		C32841841D7C50B800AAD930 /* CalendarPresenterViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CalendarPresenterViewController.swift; sourceTree = "<group>"; };
 		C32841871D7C522C00AAD930 /* DateExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = DateExtension.swift; path = ../../CalendarDayPicker/CalendarDayPicker/DateExtension.swift; sourceTree = "<group>"; };
 		C32841881D7C522C00AAD930 /* MonthViewPicker.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = MonthViewPicker.swift; path = ../../CalendarDayPicker/CalendarDayPicker/MonthViewPicker.swift; sourceTree = "<group>"; };
@@ -125,7 +131,6 @@
 				C3352BBE1D7C1C9A00D10A9D /* InputTableViewController.swift */,
 				C35631D81D7B5761002A22C4 /* Core Data */,
 				C35631D41D7B517D002A22C4 /* Extras */,
-				C35631A11D7B1EB8002A22C4 /* SportsCalendarPlanner.xcdatamodeld */,
 				C32841871D7C522C00AAD930 /* DateExtension.swift */,
 				C32841881D7C522C00AAD930 /* MonthViewPicker.swift */,
 				C32841891D7C522C00AAD930 /* SeasonViewPicker.swift */,
@@ -155,11 +160,14 @@
 		C35631D81D7B5761002A22C4 /* Core Data */ = {
 			isa = PBXGroup;
 			children = (
+				C31DD6111D7C66180020FFA7 /* PlayableDateMO+CoreDataProperties.swift */,
+				C31DD6121D7C66180020FFA7 /* PlayableDateMO.swift */,
 				C3352BCA1D7C384500D10A9D /* TeamMO+CoreDataProperties.swift */,
 				C3352BCB1D7C384500D10A9D /* TeamMO.swift */,
 				C35631CE1D7B5091002A22C4 /* SeasonMO+CoreDataProperties.swift */,
 				C35631CF1D7B5091002A22C4 /* SeasonMO.swift */,
 				C35631D51D7B542B002A22C4 /* CoreDataTableViewController.swift */,
+				C35631A11D7B1EB8002A22C4 /* SportsCalendarPlanner.xcdatamodeld */,
 			);
 			name = "Core Data";
 			sourceTree = "<group>";
@@ -282,6 +290,8 @@
 				C35631A31D7B1EB8002A22C4 /* SportsCalendarPlanner.xcdatamodeld in Sources */,
 				C328418C1D7C522C00AAD930 /* MonthViewPicker.swift in Sources */,
 				C328418E1D7C522C00AAD930 /* SeasonViewPicker.swift in Sources */,
+				C31DD6151D7C66180020FFA7 /* PlayableDateMO.swift in Sources */,
+				C31DD6131D7C66180020FFA7 /* PlayableDateMO+CoreDataProperties.swift in Sources */,
 				C3352BC21D7C2A4900D10A9D /* TeamsViewController.swift in Sources */,
 				C35631C41D7B24F4002A22C4 /* SeasonsTableViewController.swift in Sources */,
 			);
@@ -292,6 +302,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				C32841861D7C50B800AAD930 /* CalendarPresenterViewController.swift in Sources */,
+				C31DD6161D7C66180020FFA7 /* PlayableDateMO.swift in Sources */,
 				C328418B1D7C522C00AAD930 /* DateExtension.swift in Sources */,
 				C3352BC01D7C1C9A00D10A9D /* InputTableViewController.swift in Sources */,
 				C35631C51D7B24F4002A22C4 /* SeasonsTableViewController.swift in Sources */,
@@ -303,6 +314,7 @@
 				C3352BC31D7C2A4900D10A9D /* TeamsViewController.swift in Sources */,
 				C35631D11D7B5091002A22C4 /* SeasonMO+CoreDataProperties.swift in Sources */,
 				C328418D1D7C522C00AAD930 /* MonthViewPicker.swift in Sources */,
+				C31DD6141D7C66180020FFA7 /* PlayableDateMO+CoreDataProperties.swift in Sources */,
 				C3B22DCE1D7C05350051ABC5 /* NewSeasonTableViewController.swift in Sources */,
 				C328418F1D7C522C00AAD930 /* SeasonViewPicker.swift in Sources */,
 			);
@@ -425,10 +437,13 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ENABLE_MODULES = YES;
 				INFOPLIST_FILE = SportsCalendarPlanner/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.tvr.SportsCalendarPlanner;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_VERSION = 2.3;
 				TARGETED_DEVICE_FAMILY = 2;
 			};
@@ -438,10 +453,12 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ENABLE_MODULES = YES;
 				INFOPLIST_FILE = SportsCalendarPlanner/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.tvr.SportsCalendarPlanner;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "";
 				SWIFT_VERSION = 2.3;
 				TARGETED_DEVICE_FAMILY = 2;
 			};
@@ -451,10 +468,13 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				BUNDLE_LOADER = "$(TEST_HOST)";
+				CLANG_ENABLE_MODULES = YES;
 				INFOPLIST_FILE = SportsCalendarPlannerTests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.tvr.SportsCalendarPlannerTests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "SportsCalendarPlanner/SportsCalendarPlannerTests-Bridging-Header.h";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_VERSION = 2.3;
 				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/SportsCalendarPlanner.app/SportsCalendarPlanner";
 			};
@@ -464,10 +484,12 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				BUNDLE_LOADER = "$(TEST_HOST)";
+				CLANG_ENABLE_MODULES = YES;
 				INFOPLIST_FILE = SportsCalendarPlannerTests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.tvr.SportsCalendarPlannerTests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "SportsCalendarPlanner/SportsCalendarPlannerTests-Bridging-Header.h";
 				SWIFT_VERSION = 2.3;
 				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/SportsCalendarPlanner.app/SportsCalendarPlanner";
 			};

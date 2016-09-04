@@ -1,0 +1,30 @@
+{
+  "DVTSourceControlWorkspaceBlueprintPrimaryRemoteRepositoryKey" : "CE1D82EC3F85A72316D66D567599F1B74A666DE1",
+  "DVTSourceControlWorkspaceBlueprintWorkingCopyRepositoryLocationsKey" : {
+
+  },
+  "DVTSourceControlWorkspaceBlueprintWorkingCopyStatesKey" : {
+    "4285EC6E44693CC51EBEE418D83D0A5DB96799A3" : 0,
+    "CE1D82EC3F85A72316D66D567599F1B74A666DE1" : 0
+  },
+  "DVTSourceControlWorkspaceBlueprintIdentifierKey" : "D89268A0-C999-46A2-BA33-6F82C3BC5012",
+  "DVTSourceControlWorkspaceBlueprintWorkingCopyPathsKey" : {
+    "4285EC6E44693CC51EBEE418D83D0A5DB96799A3" : "CalendarDayPicker\/",
+    "CE1D82EC3F85A72316D66D567599F1B74A666DE1" : "SportsCalendarPlanner\/"
+  },
+  "DVTSourceControlWorkspaceBlueprintNameKey" : "SportsCalendarPlanner",
+  "DVTSourceControlWorkspaceBlueprintVersion" : 204,
+  "DVTSourceControlWorkspaceBlueprintRelativePathToProjectKey" : "SportsCalendarPlanner.xcodeproj",
+  "DVTSourceControlWorkspaceBlueprintRemoteRepositoriesKey" : [
+    {
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryURLKey" : "https:\/\/github.com\/TomasVanRoose\/CalendarDayPicker",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositorySystemKey" : "com.apple.dt.Xcode.sourcecontrol.Git",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryIdentifierKey" : "4285EC6E44693CC51EBEE418D83D0A5DB96799A3"
+    },
+    {
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryURLKey" : "github.com:TomasVanRoose\/SportsCalendarPlanner.git",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositorySystemKey" : "com.apple.dt.Xcode.sourcecontrol.Git",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryIdentifierKey" : "CE1D82EC3F85A72316D66D567599F1B74A666DE1"
+    }
+  ]
+}

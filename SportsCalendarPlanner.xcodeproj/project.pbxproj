@@ -7,6 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		C32841811D7C473C00AAD930 /* DateExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = C328417E1D7C473C00AAD930 /* DateExtension.swift */; };
+		C32841821D7C473C00AAD930 /* MonthViewPicker.swift in Sources */ = {isa = PBXBuildFile; fileRef = C328417F1D7C473C00AAD930 /* MonthViewPicker.swift */; };
+		C32841831D7C473C00AAD930 /* SeasonViewPicker.swift in Sources */ = {isa = PBXBuildFile; fileRef = C32841801D7C473C00AAD930 /* SeasonViewPicker.swift */; };
 		C3352BBF1D7C1C9A00D10A9D /* InputTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C3352BBE1D7C1C9A00D10A9D /* InputTableViewController.swift */; };
 		C3352BC01D7C1C9A00D10A9D /* InputTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C3352BBE1D7C1C9A00D10A9D /* InputTableViewController.swift */; };
 		C3352BC21D7C2A4900D10A9D /* TeamsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C3352BC11D7C2A4900D10A9D /* TeamsViewController.swift */; };
@@ -44,6 +47,9 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		C328417E1D7C473C00AAD930 /* DateExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = DateExtension.swift; path = ../../CalendarDayPicker/CalendarDayPicker/DateExtension.swift; sourceTree = "<group>"; };
+		C328417F1D7C473C00AAD930 /* MonthViewPicker.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = MonthViewPicker.swift; path = ../../CalendarDayPicker/CalendarDayPicker/MonthViewPicker.swift; sourceTree = "<group>"; };
+		C32841801D7C473C00AAD930 /* SeasonViewPicker.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = SeasonViewPicker.swift; path = ../../CalendarDayPicker/CalendarDayPicker/SeasonViewPicker.swift; sourceTree = "<group>"; };
 		C3352BBE1D7C1C9A00D10A9D /* InputTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = InputTableViewController.swift; sourceTree = "<group>"; };
 		C3352BC11D7C2A4900D10A9D /* TeamsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TeamsViewController.swift; sourceTree = "<group>"; };
 		C3352BCA1D7C384500D10A9D /* TeamMO+CoreDataProperties.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "TeamMO+CoreDataProperties.swift"; sourceTree = "<group>"; };
@@ -113,6 +119,9 @@
 				C35631D81D7B5761002A22C4 /* Core Data */,
 				C35631D41D7B517D002A22C4 /* Extras */,
 				C35631A11D7B1EB8002A22C4 /* SportsCalendarPlanner.xcdatamodeld */,
+				C328417E1D7C473C00AAD930 /* DateExtension.swift */,
+				C328417F1D7C473C00AAD930 /* MonthViewPicker.swift */,
+				C32841801D7C473C00AAD930 /* SeasonViewPicker.swift */,
 			);
 			path = SportsCalendarPlanner;
 			sourceTree = "<group>";
@@ -199,10 +208,12 @@
 					C35631961D7B1EB7002A22C4 = {
 						CreatedOnToolsVersion = 7.2;
 						DevelopmentTeam = SJ2775C239;
+						LastSwiftMigration = 0800;
 					};
 					C35631AD1D7B1EB8002A22C4 = {
 						CreatedOnToolsVersion = 7.2;
 						DevelopmentTeam = SJ2775C239;
+						LastSwiftMigration = 0800;
 						TestTargetID = C35631961D7B1EB7002A22C4;
 					};
 				};
@@ -252,6 +263,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				C3352BCC1D7C384500D10A9D /* TeamMO+CoreDataProperties.swift in Sources */,
+				C32841811D7C473C00AAD930 /* DateExtension.swift in Sources */,
 				C3352BBF1D7C1C9A00D10A9D /* InputTableViewController.swift in Sources */,
 				C3B22DCD1D7C05350051ABC5 /* NewSeasonTableViewController.swift in Sources */,
 				C35631D01D7B5091002A22C4 /* SeasonMO+CoreDataProperties.swift in Sources */,
@@ -261,7 +273,9 @@
 				C35631D21D7B5091002A22C4 /* SeasonMO.swift in Sources */,
 				C35631A31D7B1EB8002A22C4 /* SportsCalendarPlanner.xcdatamodeld in Sources */,
 				C3352BC21D7C2A4900D10A9D /* TeamsViewController.swift in Sources */,
+				C32841821D7C473C00AAD930 /* MonthViewPicker.swift in Sources */,
 				C35631C41D7B24F4002A22C4 /* SeasonsTableViewController.swift in Sources */,
+				C32841831D7C473C00AAD930 /* SeasonViewPicker.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -403,6 +417,7 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.tvr.SportsCalendarPlanner;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 2.3;
 				TARGETED_DEVICE_FAMILY = 2;
 			};
 			name = Debug;
@@ -415,6 +430,7 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.tvr.SportsCalendarPlanner;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 2.3;
 				TARGETED_DEVICE_FAMILY = 2;
 			};
 			name = Release;
@@ -427,6 +443,7 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.tvr.SportsCalendarPlannerTests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 2.3;
 				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/SportsCalendarPlanner.app/SportsCalendarPlanner";
 			};
 			name = Debug;
@@ -439,6 +456,7 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.tvr.SportsCalendarPlannerTests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 2.3;
 				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/SportsCalendarPlanner.app/SportsCalendarPlanner";
 			};
 			name = Release;

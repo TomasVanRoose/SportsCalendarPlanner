@@ -95,11 +95,14 @@
                                     <outlet property="delegate" destination="uA6-d4-YhX" id="O4k-lS-cd5"/>
                                 </connections>
                             </tableView>
-                            <datePicker contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" datePickerMode="dateAndTime" minuteInterval="1" translatesAutoresizingMaskIntoConstraints="NO" id="9xn-9O-Xdi">
+                            <datePicker contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" datePickerMode="date" minuteInterval="1" translatesAutoresizingMaskIntoConstraints="NO" id="9xn-9O-Xdi">
                                 <rect key="frame" x="0.0" y="600" width="600" height="0.0"/>
                                 <date key="date" timeIntervalSinceReferenceDate="494666623.90028">
                                     <!--2016-09-04 07:23:43 +0000-->
                                 </date>
+                                <connections>
+                                    <action selector="dateChanged:" destination="uA6-d4-YhX" eventType="valueChanged" id="fQk-o0-oQa"/>
+                                </connections>
                             </datePicker>
                         </subviews>
                     </stackView>

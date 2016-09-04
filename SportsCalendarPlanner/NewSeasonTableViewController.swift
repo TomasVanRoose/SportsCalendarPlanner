@@ -54,7 +54,7 @@ class NewSeasonTableViewController: UIViewController, UITableViewDataSource, UIT
             
             let formatter = NSDateFormatter()
             let locale = NSLocale(localeIdentifier: "nl_BE")
-            formatter.dateStyle = .MediumStyle
+            formatter.dateStyle = .LongStyle
             formatter.locale = locale
             
             cell = tableView.dequeueReusableCellWithIdentifier("seasonDate")!
@@ -74,49 +74,36 @@ class NewSeasonTableViewController: UIViewController, UITableViewDataSource, UIT
         
         return cell
     }
+
+    func tableView(tableView: UITableView, willSelectRowAtIndexPath indexPath: NSIndexPath) -> NSIndexPath? {
+        
+        if indexPath.section == 1 {
+            if indexPath.row == 0 {
+                self.datePicker.setDate(self.startDate!, animated: true)
+            }
+            else if indexPath.row == 1 {
+                self.datePicker.setDate(self.endDate!, animated: true)
+            }
+        }
+        
+        return indexPath
+    }
     
-    @IBAction func cancel(sender: UIBarButtonItem) {
-        self.dismissViewControllerAnimated(true, completion: nil)
+    @IBAction func dateChanged(sender: UIDatePicker) {
+        
+        if let indexPath = self.tableView.indexPathForSelectedRow {
+            if indexPath.section == 1 {
+                
+                if indexPath.row == 0 {
+                    self.startDate = sender.date
+                } else if indexPath.row == 1 {
+                    self.endDate = sender.date
+                }
+            }
+            self.tableView.reloadData()
+            self.tableView.selectRowAtIndexPath(indexPath, animated: false, scrollPosition: .None)
+        }
     }
-
-    @IBAction func save(sender: UIBarButtonItem) {
-    }
-    /*
-    // Override to support conditional editing of the table view.
-    override func tableView(tableView: UITableView, canEditRowAtIndexPath indexPath: NSIndexPath) -> Bool {
-        // Return false if you do not want the specified item to be editable.
-        return true
-    }
-    */
-
-    /*
-    // Override to support editing the table view.
-    override func tableView(tableView: UITableView, commitEditingStyle editingStyle: UITableViewCellEditingStyle, forRowAtIndexPath indexPath: NSIndexPath) {
-        if editingStyle == .Delete {
-            // Delete the row from the data source
-            tableView.deleteRowsAtIndexPaths([indexPath], withRowAnimation: .Fade)
-        } else if editingStyle == .Insert {
-            // Create a new instance of the appropriate class, insert it into the array, and add a new row to the table view
-        }    
-    }
-    */
-
-    /*
-    // Override to support rearranging the table view.
-    override func tableView(tableView: UITableView, moveRowAtIndexPath fromIndexPath: NSIndexPath, toIndexPath: NSIndexPath) {
-
-    }
-    */
-
-    /*
-    // Override to support conditional rearranging of the table view.
-    override func tableView(tableView: UITableView, canMoveRowAtIndexPath indexPath: NSIndexPath) -> Bool {
-        // Return false if you do not want the item to be re-orderable.
-        return true
-    }
-    */
-
-    /*
     // MARK: - Navigation
 
     // In a storyboard-based application, you will often want to do a little preparation before navigation
@@ -124,6 +111,13 @@ class NewSeasonTableViewController: UIViewController, UITableViewDataSource, UIT
         // Get the new view controller using segue.destinationViewController.
         // Pass the selected object to the new view controller.
     }
-    */
+    
+    @IBAction func cancel(sender: UIBarButtonItem) {
+        self.dismissViewControllerAnimated(true, completion: nil)
+    }
+    
+    @IBAction func save(sender: UIBarButtonItem) {
+        
+    }
 
 }

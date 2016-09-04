@@ -13,12 +13,22 @@ class TeamsViewController: CoreDataTableViewController {
 
     var season : SeasonMO!
     var managedObjectContext: NSManagedObjectContext?
+    var detailViewController : CalendarPresenterViewController?
     
     override func viewDidLoad() {
         super.viewDidLoad()
 
         self.title = season.name
         
+    }
+    
+    override func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
+        
+        let team = self.fetchedResultsController.objectAtIndexPath(indexPath) as! TeamMO
+        
+        if let detail = self.detailViewController {
+            detail.selectTeam(team)
+        }
     }
 
     override func initializeFetchedResultsController() {

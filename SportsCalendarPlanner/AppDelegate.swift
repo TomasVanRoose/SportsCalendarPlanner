@@ -18,9 +18,15 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     func application(application: UIApplication, didFinishLaunchingWithOptions launchOptions: [NSObject: AnyObject]?) -> Bool {
         
         let splitViewController = self.window!.rootViewController as? UISplitViewController
+        
         let navigationController = splitViewController?.viewControllers.first as? UINavigationController
         let seasonsTableViewController = navigationController!.topViewController as? SeasonsTableViewController
+        
+        let detailNavigationController = splitViewController?.viewControllers.last as? UINavigationController
+        let calendarPresenter = detailNavigationController!.topViewController as? CalendarPresenterViewController
+        
         seasonsTableViewController!.managedObjectContext = self.managedObjectContext
+        seasonsTableViewController!.detailViewController = calendarPresenter
         
         return true
     }

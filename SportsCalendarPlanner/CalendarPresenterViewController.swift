@@ -19,6 +19,12 @@ class CalendarPresenterViewController: UIViewController {
     
     func selectSeason(season : SeasonMO) {
         
+        if self.season != nil {
+            for view in self.view.subviews {
+                view.removeFromSuperview()
+            }
+        }
+        
         self.season = season
         
         let frame = CGRect(x: 10, y: 40, width: self.view.bounds.size.width, height: self.view.bounds.size.height);
@@ -58,17 +64,32 @@ class CalendarPresenterViewController: UIViewController {
         if let team = self.team {
             
             if color.isEqual(UIColor.greenColor()) {
-                
-            
-            } else {
-                picker.selectDate(date, color: UIColor.greenColor())
-                _ = PlayableDateMO.createPlayableData(date, team: team, forContext: self.managedObjectContext!)
+                // Fetch the managedobject PlayableDate for that date and delete it
+                let request = NSFetchRequest(entityName: "PlayableDate")
+                request.predicate = NSPredicate(format: "team == %@", team)
                 
                 do {
-                    try self.managedObjectContext!.save()
+                    let playableDates = try self.managedObjectContext!.executeFetchRequest(request) as! [PlayableDateMO]
+                    for playableDate in playableDates {
+                        if date.compareDays(playableDate.date!) == NSComparisonResult.OrderedSame {
+                            self.managedObjectContext!.deleteObject(playableDate)
+                            picker.selectDate(date, color: UIColor.blackColor())
+                        }
+                    }
                 } catch {
-                    fatalError("Failure to save context: \(error)")
+                    fatalError("Failed to fetch playable dates :\(error)")
                 }
+            
+            } else if color.isEqual(UIColor.blackColor()){
+                // Save the selected date in the database
+                picker.selectDate(date, color: UIColor.greenColor())
+                _ = PlayableDateMO.createPlayableData(date, team: team, forContext: self.managedObjectContext!)
+            }
+            
+            do {
+                try self.managedObjectContext!.save()
+            } catch {
+                fatalError("Failure to save context: \(error)")
             }
         }
     }

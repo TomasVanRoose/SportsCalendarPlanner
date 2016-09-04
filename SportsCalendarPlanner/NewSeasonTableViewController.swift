@@ -124,8 +124,7 @@ class NewSeasonTableViewController: UIViewController, UITableViewDataSource, UIT
         if let destination = segue.destinationViewController as? InputTableViewController {
             destination.title = "Name of season"
             destination.didInputFunc = didInputString
-        }
-        
+        }         
     }
     
     @IBAction func cancel(sender: UIBarButtonItem) {

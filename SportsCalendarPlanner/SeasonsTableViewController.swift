@@ -39,7 +39,14 @@ class SeasonsTableViewController: CoreDataTableViewController {
             if let newSeasonController = destination.topViewController as? NewSeasonTableViewController {
                 newSeasonController.didSaveFunc = seasonCreatorDidReturn
             }
+        } else if let destination = segue.destinationViewController as? TeamsViewController {
+            
+            let indexPath = self.tableView.indexPathForCell(sender as! UITableViewCell)!
+            let season = self.fetchedResultsController.objectAtIndexPath(indexPath) as! SeasonMO
+            
+            destination.season = season
         }
+
     }
     
     

@@ -34,7 +34,7 @@ class TeamsViewController: CoreDataTableViewController {
     override func initializeFetchedResultsController() {
         
         let request = NSFetchRequest(entityName: "Team")
-        request.predicate = NSPredicate(format: "season.name = %@", self.season.name!)
+        request.predicate = NSPredicate(format: "season == %@", self.season!)
         let nameSort = NSSortDescriptor(key: "name", ascending: true)
         request.sortDescriptors = [ nameSort ]
         

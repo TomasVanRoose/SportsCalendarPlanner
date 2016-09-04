@@ -15,14 +15,16 @@ class CalendarPresenterViewController: UIViewController {
     var team : TeamMO?
     var managedObjectContext : NSManagedObjectContext?
     
+    var datePickerView : SeasonViewPicker?
+    
     func selectSeason(season : SeasonMO) {
         
         self.season = season
         
         let frame = CGRect(x: 10, y: 40, width: self.view.bounds.size.width, height: self.view.bounds.size.height);
-        let seasonView = SeasonViewPicker.init(frame: frame, beginDate: season.startDate!, endDate: season.endDate!, dateFunc: didSelectDate)
+        self.datePickerView = SeasonViewPicker.init(frame: frame, beginDate: season.startDate!, endDate: season.endDate!, dateFunc: didSelectDate)
         
-        self.view.addSubview(seasonView)
+        self.view.addSubview(self.datePickerView!)
         
     }
     
@@ -30,6 +32,24 @@ class CalendarPresenterViewController: UIViewController {
         
         self.team = team
         self.title = team.name
+        
+        if let datePicker = self.datePickerView {
+            
+            datePicker.deselectAllDatesInColor(UIColor.greenColor())
+            
+            let request = NSFetchRequest(entityName: "PlayableDate")
+            request.predicate = NSPredicate(format: "team == %@", team)
+            
+            do {
+                let playableDates = try self.managedObjectContext!.executeFetchRequest(request) as! [PlayableDateMO]
+                
+                for date in playableDates {
+                    datePicker.selectDate(date.date!, color: UIColor.greenColor())
+                }                
+            } catch {
+                fatalError("Failed to fetch playable dates: \(error)")
+            }
+        }
     }
     
     
@@ -42,7 +62,7 @@ class CalendarPresenterViewController: UIViewController {
             
             } else {
                 picker.selectDate(date, color: UIColor.greenColor())
-                PlayableDateMO.createPlayableData(date, team: team, forContext: self.managedObjectContext!)
+                _ = PlayableDateMO.createPlayableData(date, team: team, forContext: self.managedObjectContext!)
                 
                 do {
                     try self.managedObjectContext!.save()
@@ -50,10 +70,7 @@ class CalendarPresenterViewController: UIViewController {
                     fatalError("Failure to save context: \(error)")
                 }
             }
-            
-            
         }
-        
     }
     
     override func viewDidLoad() {

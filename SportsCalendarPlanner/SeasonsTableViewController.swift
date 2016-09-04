@@ -13,8 +13,7 @@ class SeasonsTableViewController: CoreDataTableViewController {
 
     var managedObjectContext: NSManagedObjectContext?
     var detailViewController : CalendarPresenterViewController?
-    
-    
+        
     override func viewDidLoad() {
         super.viewDidLoad()
         

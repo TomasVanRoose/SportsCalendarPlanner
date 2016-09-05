@@ -26,21 +26,30 @@ extension MutableCollectionType where Index == Int {
 
 class Population {
     
-    private static var homeTeamArray : [String]?
-    private static var awayArray : [String]?
+    static var homeTeamArray : [String]?
+    static var awayArray : [String]?
     
-    private static var teamDates : [[NSDate]]?
-    private static var teams : [String]?
+    static var teamDates : [[NSDate]]?
+    static var teams : [String]?
     
-    class func initializeTeams(teamsWithDates : [String : [NSDate]]) {
+    static var preferedDaysBetweenReturnGames = 0
+    static var preferedDaysBetweenConsecutieGames = 0
+    
+    class func initializeTeams(teamsWithDates : [String : [NSDate]], preferedDaysBetweenReturnGames : Int, preferedDaysBetweenConsecutieGames : Int) {
         
-        self.teams = [String](teamsWithDates.keys)
-        self.teamDates = [[NSDate]](teamsWithDates.values)
+        self.preferedDaysBetweenReturnGames = preferedDaysBetweenReturnGames
+        self.preferedDaysBetweenConsecutieGames = preferedDaysBetweenConsecutieGames
         
-        homeTeamArray = [String]()
-        awayArray = [String]()
+        self.teams = ([String](teamsWithDates.keys)).sort()
+        
+        self.homeTeamArray = [String]()
+        self.awayArray = [String]()
+        self.teamDates = [[NSDate]]()
         
         for team in self.teams! {
+            
+            teamDates!.append(teamsWithDates[team]!)
+            
             for _ in 1...teams!.count - 1 {
                 homeTeamArray!.append(team)
             }
@@ -50,8 +59,6 @@ class Population {
                 }
             }
         }
-        print(homeTeamArray)
-        print(awayArray)
     }
     
     class func generateRandomPopulation() -> (Population) {
@@ -67,20 +74,80 @@ class Population {
             population.gameDates!.appendContentsOf(dates)
         }
         
-        print(population.gameDates)
         return population
     }
     
     // Instance variables
     
-    private var gameDates : [NSDate]?
+    var gameDates : [NSDate]?
     
     
-    func fitness() -> int {
+    func fitness() -> Double {
         
+        var consecutiveFitness = 0.0
+        let teamCount = Population.teams!.count
+        let preferedCons = Population.preferedDaysBetweenConsecutieGames
+        // The more days between two consecutive games the better the fitness score
+        for i in 0..<teamCount - 1 {
+            
+            let date = self.gameDates![i]
+            
+            var leastDaysBetween = Int.max
+
+            for j in 1..<teamCount {
+                let otherDate = self.gameDates![j*(teamCount-1)]
+                let daysBetween = abs(date.daysBetween(otherDate))
+                
+                if  daysBetween < leastDaysBetween {
+                    leastDaysBetween = daysBetween
+                }
+            }
+            
+            if leastDaysBetween < preferedCons {
+                consecutiveFitness += Double(leastDaysBetween)/Double(preferedCons)
+            } else {
+                consecutiveFitness += 1
+            }
+        }
         
+        consecutiveFitness = consecutiveFitness / Double(teamCount - 1)
         
-        return 0
+        // The more days between home and away game the better
+        var i = 0
+        var j = 0
+        var returnFitness = 0.0
+        let prefered = Double(Population.preferedDaysBetweenReturnGames)
+        let firstSlope = 0.8 * prefered
+
+        while i < Population.homeTeamArray!.count {
+            
+            let homeDate = self.gameDates![i]
+            let awayDate = self.gameDates![j*(teamCount - 2) + (teamCount - 1)]
+            
+            let daysBetween = Double(abs(homeDate.daysBetween(awayDate)))
+
+            if (daysBetween <= firstSlope) {
+                returnFitness += (0.2 * daysBetween)/firstSlope
+            } else if (daysBetween <= prefered) {
+                returnFitness += ((0.8 * daysBetween)/(prefered - firstSlope)) - ((0.8*firstSlope)/(prefered - firstSlope)) + 0.2
+            } else {
+                returnFitness += 0.8 + (0.2 * daysBetween)/prefered
+            }
+            
+            i += 1
+            j += 1
+            if i % (teamCount - 1) == 0 {
+                i += (i/(teamCount - 1))
+                j = 0
+            }
+            
+        }
+        
+        let numberOfGames = Double(teamCount*(teamCount - 1))/2.0
+        
+        returnFitness = returnFitness/numberOfGames
+        
+        return consecutiveFitness + returnFitness
     }
     
     

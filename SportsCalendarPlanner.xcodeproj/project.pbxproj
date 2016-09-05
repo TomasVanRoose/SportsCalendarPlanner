@@ -41,6 +41,12 @@
 		C35631D31D7B5091002A22C4 /* SeasonMO.swift in Sources */ = {isa = PBXBuildFile; fileRef = C35631CF1D7B5091002A22C4 /* SeasonMO.swift */; };
 		C35631D61D7B542B002A22C4 /* CoreDataTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C35631D51D7B542B002A22C4 /* CoreDataTableViewController.swift */; };
 		C35631D71D7B542B002A22C4 /* CoreDataTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C35631D51D7B542B002A22C4 /* CoreDataTableViewController.swift */; };
+		C372E4941D7C804A00353952 /* PlanSeasonViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C372E4931D7C804A00353952 /* PlanSeasonViewController.swift */; };
+		C372E4951D7C804A00353952 /* PlanSeasonViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C372E4931D7C804A00353952 /* PlanSeasonViewController.swift */; };
+		C372E4971D7C8ABB00353952 /* Planner.swift in Sources */ = {isa = PBXBuildFile; fileRef = C372E4961D7C8ABB00353952 /* Planner.swift */; };
+		C372E4981D7C8ABB00353952 /* Planner.swift in Sources */ = {isa = PBXBuildFile; fileRef = C372E4961D7C8ABB00353952 /* Planner.swift */; };
+		C372E49A1D7C8B7C00353952 /* Population.swift in Sources */ = {isa = PBXBuildFile; fileRef = C372E4991D7C8B7C00353952 /* Population.swift */; };
+		C372E49B1D7C8B7C00353952 /* Population.swift in Sources */ = {isa = PBXBuildFile; fileRef = C372E4991D7C8B7C00353952 /* Population.swift */; };
 		C3B22DCD1D7C05350051ABC5 /* NewSeasonTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C3B22DCC1D7C05350051ABC5 /* NewSeasonTableViewController.swift */; };
 		C3B22DCE1D7C05350051ABC5 /* NewSeasonTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C3B22DCC1D7C05350051ABC5 /* NewSeasonTableViewController.swift */; };
 /* End PBXBuildFile section */
@@ -80,6 +86,9 @@
 		C35631CE1D7B5091002A22C4 /* SeasonMO+CoreDataProperties.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "SeasonMO+CoreDataProperties.swift"; sourceTree = "<group>"; };
 		C35631CF1D7B5091002A22C4 /* SeasonMO.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SeasonMO.swift; sourceTree = "<group>"; };
 		C35631D51D7B542B002A22C4 /* CoreDataTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CoreDataTableViewController.swift; sourceTree = "<group>"; };
+		C372E4931D7C804A00353952 /* PlanSeasonViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PlanSeasonViewController.swift; sourceTree = "<group>"; };
+		C372E4961D7C8ABB00353952 /* Planner.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Planner.swift; sourceTree = "<group>"; };
+		C372E4991D7C8B7C00353952 /* Population.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Population.swift; sourceTree = "<group>"; };
 		C3B22DCC1D7C05350051ABC5 /* NewSeasonTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NewSeasonTableViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -126,7 +135,10 @@
 				C35631C31D7B24F4002A22C4 /* SeasonsTableViewController.swift */,
 				C3352BC11D7C2A4900D10A9D /* TeamsViewController.swift */,
 				C32841841D7C50B800AAD930 /* CalendarPresenterViewController.swift */,
+				C372E4931D7C804A00353952 /* PlanSeasonViewController.swift */,
 				C356319E1D7B1EB8002A22C4 /* Main.storyboard */,
+				C372E4961D7C8ABB00353952 /* Planner.swift */,
+				C372E4991D7C8B7C00353952 /* Population.swift */,
 				C3B22DCC1D7C05350051ABC5 /* NewSeasonTableViewController.swift */,
 				C3352BBE1D7C1C9A00D10A9D /* InputTableViewController.swift */,
 				C35631D81D7B5761002A22C4 /* Core Data */,
@@ -277,6 +289,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				C372E4941D7C804A00353952 /* PlanSeasonViewController.swift in Sources */,
 				C3352BCC1D7C384500D10A9D /* TeamMO+CoreDataProperties.swift in Sources */,
 				C3352BBF1D7C1C9A00D10A9D /* InputTableViewController.swift in Sources */,
 				C3B22DCD1D7C05350051ABC5 /* NewSeasonTableViewController.swift in Sources */,
@@ -287,8 +300,10 @@
 				C35631D61D7B542B002A22C4 /* CoreDataTableViewController.swift in Sources */,
 				C35631D21D7B5091002A22C4 /* SeasonMO.swift in Sources */,
 				C32841851D7C50B800AAD930 /* CalendarPresenterViewController.swift in Sources */,
+				C372E4971D7C8ABB00353952 /* Planner.swift in Sources */,
 				C35631A31D7B1EB8002A22C4 /* SportsCalendarPlanner.xcdatamodeld in Sources */,
 				C328418C1D7C522C00AAD930 /* MonthViewPicker.swift in Sources */,
+				C372E49A1D7C8B7C00353952 /* Population.swift in Sources */,
 				C328418E1D7C522C00AAD930 /* SeasonViewPicker.swift in Sources */,
 				C31DD6151D7C66180020FFA7 /* PlayableDateMO.swift in Sources */,
 				C31DD6131D7C66180020FFA7 /* PlayableDateMO+CoreDataProperties.swift in Sources */,
@@ -309,14 +324,17 @@
 				C35631B31D7B1EB8002A22C4 /* SportsCalendarPlannerTests.swift in Sources */,
 				C3352BCD1D7C384500D10A9D /* TeamMO+CoreDataProperties.swift in Sources */,
 				C35631D31D7B5091002A22C4 /* SeasonMO.swift in Sources */,
+				C372E4981D7C8ABB00353952 /* Planner.swift in Sources */,
 				C3352BCF1D7C384500D10A9D /* TeamMO.swift in Sources */,
 				C35631D71D7B542B002A22C4 /* CoreDataTableViewController.swift in Sources */,
+				C372E4951D7C804A00353952 /* PlanSeasonViewController.swift in Sources */,
 				C3352BC31D7C2A4900D10A9D /* TeamsViewController.swift in Sources */,
 				C35631D11D7B5091002A22C4 /* SeasonMO+CoreDataProperties.swift in Sources */,
 				C328418D1D7C522C00AAD930 /* MonthViewPicker.swift in Sources */,
 				C31DD6141D7C66180020FFA7 /* PlayableDateMO+CoreDataProperties.swift in Sources */,
 				C3B22DCE1D7C05350051ABC5 /* NewSeasonTableViewController.swift in Sources */,
 				C328418F1D7C522C00AAD930 /* SeasonViewPicker.swift in Sources */,
+				C372E49B1D7C8B7C00353952 /* Population.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -473,7 +491,6 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.tvr.SportsCalendarPlannerTests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_OBJC_BRIDGING_HEADER = "SportsCalendarPlanner/SportsCalendarPlannerTests-Bridging-Header.h";
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_VERSION = 2.3;
 				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/SportsCalendarPlanner.app/SportsCalendarPlanner";
@@ -489,7 +506,6 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.tvr.SportsCalendarPlannerTests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_OBJC_BRIDGING_HEADER = "SportsCalendarPlanner/SportsCalendarPlannerTests-Bridging-Header.h";
 				SWIFT_VERSION = 2.3;
 				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/SportsCalendarPlanner.app/SportsCalendarPlanner";
 			};

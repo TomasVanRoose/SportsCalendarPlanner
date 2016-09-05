@@ -17,19 +17,36 @@ class Planner {
     init(teamsWithDates : [String : [NSDate]]) {
         
         self.teamsWithDates = teamsWithDates
+        print(teamsWithDates)
     }
     
     
-    func planCalendar() {
+    func planCalendar() -> ([NSDate]) {
         
-        Population.initializeTeams(self.teamsWithDates)
+        Population.initializeTeams(self.teamsWithDates, preferedDaysBetweenReturnGames: 30, preferedDaysBetweenConsecutieGames: 5)
         
         var populations = [Population]()
         
-        for i in 0..<populationSize {
-            
+        for _ in 0..<populationSize {
             populations.append(Population.generateRandomPopulation())
         }
         
+        return findFittestPopulation(populations).gameDates!
+        
+    }
+    
+    func findFittestPopulation(populations : [Population]) -> (Population) {
+        
+        var largest = Population()
+        var largestFit = 0.0
+        
+        for pop in populations {
+            let fit = pop.fitness()
+            if fit > largestFit {
+                largestFit = fit
+                largest = pop
+            }
+        }
+        return largest
     }
 }

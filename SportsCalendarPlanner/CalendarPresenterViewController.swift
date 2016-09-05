@@ -27,7 +27,7 @@ class CalendarPresenterViewController: UIViewController {
         
         self.season = season
         
-        let frame = CGRect(x: 10, y: 40, width: self.view.frame.size.width, height: self.view.bounds.size.height);
+        let frame = CGRect(x: 10, y: 20, width: self.view.frame.size.width, height: self.view.bounds.size.height);
         self.datePickerView = SeasonViewPicker.init(frame: frame, beginDate: season.startDate!, endDate: season.endDate!, dateFunc: didSelectDate)
         
         self.view.addSubview(self.datePickerView!)

@@ -17,20 +17,23 @@ class PlanSeasonViewController: UIViewController {
 
     var homeDates : [String : [NSDate]]?
     
-    override func viewDidLoad() {
+    
+    override func viewDidAppear(animated: Bool) {
+
+        super.viewDidAppear(animated)
         
-        super.viewDidLoad()
-        
-        // Views
         for view in self.view.subviews {
             view.removeFromSuperview()
         }
         
-        let frame = CGRect(x: 10, y: 40, width: self.view.frame.size.width, height: self.view.bounds.size.height)
+        let frame = CGRect(x: 10, y: 40, width: self.view.bounds.size.height, height: self.view.bounds.size.height)
         self.datePickerView = SeasonViewPicker.init(frame: frame, beginDate: self.season!.startDate!, endDate: self.season!.endDate!, dateFunc: nil)
         
         self.view.addSubview(self.datePickerView!)
-        
+    }
+    
+    override func viewDidLoad() {
+        super.viewDidLoad()
         
         // Planner
         var teamManagedObjects = [TeamMO]()

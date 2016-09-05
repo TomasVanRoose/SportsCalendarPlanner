@@ -28,7 +28,6 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         calendarPresenter?.managedObjectContext = self.managedObjectContext
         
         seasonsTableViewController!.managedObjectContext = self.managedObjectContext
-        seasonsTableViewController!.detailViewController = calendarPresenter
         
         return true
     }

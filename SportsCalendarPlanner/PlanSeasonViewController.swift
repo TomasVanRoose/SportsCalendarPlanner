@@ -13,18 +13,35 @@ class PlanSeasonViewController: UIViewController {
 
     var season : SeasonMO?
     var managedObjectContext : NSManagedObjectContext?
-    
+    var datePickerView : SeasonViewPicker?
+
+    var homeDates : [String : [NSDate]]?
     
     override func viewDidLoad() {
+        
         super.viewDidLoad()
-
+        
+        // Views
+        for view in self.view.subviews {
+            view.removeFromSuperview()
+        }
+        
+        let frame = CGRect(x: 10, y: 40, width: self.view.frame.size.width, height: self.view.bounds.size.height)
+        self.datePickerView = SeasonViewPicker.init(frame: frame, beginDate: self.season!.startDate!, endDate: self.season!.endDate!, dateFunc: nil)
+        
+        self.view.addSubview(self.datePickerView!)
+        
+        
+        // Planner
+        var teamManagedObjects = [TeamMO]()
         var teamsWithDates = [String : [NSDate]]()
         
         let teamRequest = NSFetchRequest(entityName: "Team")
         teamRequest.predicate = NSPredicate(format: "season == %@", self.season!)
+        teamRequest.sortDescriptors = [ NSSortDescriptor(key: "name", ascending: true)]
         
         do {
-            let teamManagedObjects = try self.managedObjectContext!.executeFetchRequest(teamRequest) as! [TeamMO]
+            teamManagedObjects = try self.managedObjectContext!.executeFetchRequest(teamRequest) as! [TeamMO]
             
             for teamMO in teamManagedObjects {
                 
@@ -46,7 +63,30 @@ class PlanSeasonViewController: UIViewController {
         
         let planner = Planner(teamsWithDates: teamsWithDates)
         
-        planner.planCalendar()
+        let gameDates = planner.planCalendar()
+        
+        homeDates = [String : [NSDate]]()
+        
+        for i in 0..<teamManagedObjects.count {
+            
+            var dates = [NSDate]()
+            for j in 0..<teamManagedObjects.count - 1 {
+                dates.append(gameDates[i*(teamManagedObjects.count - 1) + j])
+            }
+            homeDates![teamManagedObjects[i].name!] = dates
+        }
+        
+    }
+    
+    func selectTeam(team : String) {
+        
+        self.datePickerView?.deselectAllDatesInColor(UIColor.greenColor())
+        
+        let dates = homeDates![team]!
+        
+        for date in dates {
+            self.datePickerView?.selectDate(date, color: UIColor.greenColor())
+        }
         
     }
 

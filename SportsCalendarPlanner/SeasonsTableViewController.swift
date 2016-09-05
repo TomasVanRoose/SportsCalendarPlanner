@@ -12,7 +12,6 @@ import CoreData
 class SeasonsTableViewController: CoreDataTableViewController {
 
     var managedObjectContext: NSManagedObjectContext?
-    var detailViewController : CalendarPresenterViewController?
         
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -50,9 +49,11 @@ class SeasonsTableViewController: CoreDataTableViewController {
             
             destination.season = season
             destination.managedObjectContext = self.managedObjectContext
-            destination.detailViewController = self.detailViewController
 
-            if let detail = self.detailViewController {
+            let detailNavController = self.splitViewController?.viewControllers.last as? UINavigationController
+            let detailViewController = detailNavController?.topViewController
+            
+            if let detail = detailViewController as? CalendarPresenterViewController {
                 detail.selectSeason(season)
             }
         }

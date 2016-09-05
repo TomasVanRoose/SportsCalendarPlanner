@@ -13,7 +13,6 @@ class TeamsViewController: CoreDataTableViewController {
 
     var season : SeasonMO!
     var managedObjectContext: NSManagedObjectContext?
-    var detailViewController : CalendarPresenterViewController?
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -26,8 +25,13 @@ class TeamsViewController: CoreDataTableViewController {
         
         let team = self.fetchedResultsController.objectAtIndexPath(indexPath) as! TeamMO
         
-        if let detail = self.detailViewController {
+        let detailNavController = self.splitViewController?.viewControllers.last as? UINavigationController
+        let detailViewController = detailNavController?.topViewController
+        
+        if let detail = detailViewController as? CalendarPresenterViewController {
             detail.selectTeam(team)
+        } else if let detail = detailViewController as? PlanSeasonViewController {
+            detail.selectTeam(team.name!)
         }
     }
 

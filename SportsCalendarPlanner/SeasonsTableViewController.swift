@@ -39,7 +39,7 @@ class SeasonsTableViewController: CoreDataTableViewController {
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
        
         if let destination = segue.destinationViewController as? UINavigationController {
-            if let newSeasonController = destination.topViewController as? NewSeasonTableViewController {
+            if let newSeasonController = destination.topViewController as? CreateSeasonViewController {
                 newSeasonController.didSaveFunc = seasonCreatorDidReturn
             }
         } else if let destination = segue.destinationViewController as? TeamsViewController {

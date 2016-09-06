@@ -78,7 +78,6 @@ class Population {
     }
     
     // Instance variables
-    
     var gameDates : [NSDate]?
     
     
@@ -106,7 +105,7 @@ class Population {
             if leastDaysBetween < preferedCons {
                 consecutiveFitness += Double(leastDaysBetween)/Double(preferedCons)
             } else {
-                consecutiveFitness += 1
+                consecutiveFitness += 0.8 + ((0.2 * Double(leastDaysBetween))/Double(preferedCons))
             }
         }
         

@@ -1,21 +1,21 @@
 //
-//  NewSeasonTableViewController.swift
+//  CreateSeasonViewController.swift
 //  SportsCalendarPlanner
 //
-//  Created by Tomas Van Roose on 04/09/16.
+//  Created by Tomas Van Roose on 06/09/16.
 //  Copyright © 2016 Tomas Van Roose. All rights reserved.
 //
 
 import UIKit
-import Foundation
 
-class NewSeasonTableViewController: UIViewController, UITableViewDataSource, UITableViewDelegate {
+class CreateSeasonViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
 
     // Set this function in the calling class to get the saved values
     var didSaveFunc : ((name : String, startDate : NSDate, endDate : NSDate) -> ())?
     
-    @IBOutlet private weak var datePicker: UIDatePicker!
+    @IBOutlet weak var datePicker: UIDatePicker!
     @IBOutlet weak var tableView: UITableView!
+    
     
     private var startDate : NSDate?
     private var endDate : NSDate?
@@ -27,13 +27,13 @@ class NewSeasonTableViewController: UIViewController, UITableViewDataSource, UIT
         self.startDate = NSDate()
         self.endDate = NSDate(timeInterval: 60*60*24*355, sinceDate: self.startDate!)
     }
-
+    
     // MARK: - Table view data source
-
+    
     func numberOfSectionsInTableView(tableView: UITableView) -> Int {
         return 2
     }
-
+    
     func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         
         if section == 0 {
@@ -42,7 +42,7 @@ class NewSeasonTableViewController: UIViewController, UITableViewDataSource, UIT
             return 2
         }
     }
-
+    
     
     func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
         
@@ -81,7 +81,7 @@ class NewSeasonTableViewController: UIViewController, UITableViewDataSource, UIT
         
         return cell
     }
-
+    
     func tableView(tableView: UITableView, willSelectRowAtIndexPath indexPath: NSIndexPath) -> NSIndexPath? {
         
         if indexPath.section == 1 {
@@ -95,12 +95,12 @@ class NewSeasonTableViewController: UIViewController, UITableViewDataSource, UIT
         
         return indexPath
     }
+
     
-    @IBAction func dateChanged(sender: UIDatePicker) {
+    @IBAction func changedDate(sender: UIDatePicker) {
         
         if let indexPath = self.tableView.indexPathForSelectedRow {
             if indexPath.section == 1 {
-                
                 if indexPath.row == 0 {
                     self.startDate = sender.date
                 } else if indexPath.row == 1 {
@@ -113,7 +113,6 @@ class NewSeasonTableViewController: UIViewController, UITableViewDataSource, UIT
     }
     
     // MARK: - Navigation
-    
     func didInputString(inputString : String) {
         self.name = inputString
         self.tableView.reloadData()
@@ -124,12 +123,13 @@ class NewSeasonTableViewController: UIViewController, UITableViewDataSource, UIT
         if let destination = segue.destinationViewController as? InputTableViewController {
             destination.title = "Name of season"
             destination.didInputFunc = didInputString
-        }         
+        }
     }
     
     @IBAction func cancel(sender: UIBarButtonItem) {
         self.dismissViewControllerAnimated(true, completion: nil)
     }
+    
     
     @IBAction func save(sender: UIBarButtonItem) {
         if let name = self.name {

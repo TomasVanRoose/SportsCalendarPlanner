@@ -9,28 +9,17 @@
 import UIKit
 import CoreData
 
-class PlanSeasonViewController: UIViewController {
+class PlanSeasonViewController: UITableViewController {
 
     var season : SeasonMO?
     var managedObjectContext : NSManagedObjectContext?
     var datePickerView : SeasonViewPicker?
-
-    var homeDates : [String : [NSDate]]?
     
+    var population : Population?
     
-    override func viewDidAppear(animated: Bool) {
-
-        super.viewDidAppear(animated)
-        
-        for view in self.view.subviews {
-            view.removeFromSuperview()
-        }
-        
-        let frame = CGRect(x: 10, y: 40, width: self.view.bounds.size.height, height: self.view.bounds.size.height)
-        self.datePickerView = SeasonViewPicker.init(frame: frame, beginDate: self.season!.startDate!, endDate: self.season!.endDate!, dateFunc: nil)
-        
-        self.view.addSubview(self.datePickerView!)
-    }
+    var otherTeams : [String]?
+    var homeGameDates : [NSDate]?
+    var team : String?
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -66,31 +55,64 @@ class PlanSeasonViewController: UIViewController {
         
         let planner = Planner(teamsWithDates: teamsWithDates)
         
-        let gameDates = planner.planCalendar()
-        
-        homeDates = [String : [NSDate]]()
-        
-        for i in 0..<teamManagedObjects.count {
-            
-            var dates = [NSDate]()
-            for j in 0..<teamManagedObjects.count - 1 {
-                dates.append(gameDates[i*(teamManagedObjects.count - 1) + j])
-            }
-            homeDates![teamManagedObjects[i].name!] = dates
-        }
-        
+        population = planner.planCalendar()
+
     }
     
     func selectTeam(team : String) {
         
-        self.datePickerView?.deselectAllDatesInColor(UIColor.greenColor())
-        
-        let dates = homeDates![team]!
-        
-        for date in dates {
-            self.datePickerView?.selectDate(date, color: UIColor.greenColor())
+        if let pop = self.population {
+            let teams = Population.teams
+            self.otherTeams = teams!.filter { $0 != team }
+            self.homeGameDates = pop.getHomeGameDatesForTeam(team)
+            self.team = team
+            self.tableView.reloadData()
         }
-        
+    }
+    
+    override func numberOfSectionsInTableView(tableView: UITableView) -> Int {
+        if self.team != nil {
+            return otherTeams!.count
+        } else  {
+            return 0
+        }
+    }
+    
+    override func tableView(tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
+        return otherTeams?[section]
     }
 
+    override func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        return 2
+    }
+    
+    override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
+        
+        let cell : UITableViewCell
+        
+        let formatter = NSDateFormatter()
+        formatter.dateFormat = "dd-MM-yyyy"
+        let date = self.homeGameDates![indexPath.section]
+
+        if indexPath.row == 0 {
+            cell = self.tableView.dequeueReusableCellWithIdentifier("gameDate")!
+            cell.textLabel!.text = "Gamedate: \(formatter.stringFromDate(date))"
+        } else {
+            cell = self.tableView.dequeueReusableCellWithIdentifier("returnDate")!
+            let returnDate = self.population!.returnGameFor(self.team!, game: date)
+            
+            
+            let daysBetween = abs(date.daysBetween(returnDate))
+            
+            cell.textLabel!.text = "Returngame: \(formatter.stringFromDate(returnDate))"
+            cell.detailTextLabel!.text = "\(daysBetween) days between"
+        }
+        
+        
+        return cell
+    }
+    
+    
+    
+    
 }

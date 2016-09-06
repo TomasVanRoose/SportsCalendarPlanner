@@ -149,9 +149,44 @@ class Population {
         return consecutiveFitness + returnFitness
     }
     
+    func getHomeGameDatesForTeam(team : String) -> [NSDate] {
+        
+        var homeGames = [NSDate]()
+        
+        let teamIndex = Population.teams!.indexOf(team)!
+        let numberOfTeams = Population.teams!.count
+        
+        let from = teamIndex * (numberOfTeams - 1)
+        let to = (teamIndex + 1) * (numberOfTeams - 1)
+        
+        for i in from..<to {
+            homeGames.append(self.gameDates![i])
+        }
+        
+        return homeGames
+    }
     
-    
-    
+    func returnGameFor(team : String, game : NSDate) -> NSDate {
+        
+        var index = 0
+        
+        for i in 0..<self.gameDates!.count {
+            if Population.homeTeamArray![i] == team && self.gameDates![i] == game {
+                index = i
+                break
+            }
+        }
+        
+        let awayTeam = Population.awayArray![index]
+        let awayTeamIndex = Population.teams!.indexOf(awayTeam)!
+        
+        let teamsWithoutAwayTeam = Population.teams!.filter { $0 != awayTeam }
+        let homeTeamIndex = teamsWithoutAwayTeam.indexOf(team)!
+        
+        
+        return self.gameDates![(awayTeamIndex * (Population.teams!.count - 1)) + homeTeamIndex]
+        
+    }
     
     
     

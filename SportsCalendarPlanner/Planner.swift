@@ -21,7 +21,7 @@ class Planner {
     }
     
     
-    func planCalendar() -> ([NSDate]) {
+    func planCalendar() -> (Population) {
         
         Population.initializeTeams(self.teamsWithDates, preferedDaysBetweenReturnGames: 30, preferedDaysBetweenConsecutieGames: 5)
         
@@ -56,12 +56,16 @@ class Planner {
         }
         
         
-        return findFittestPopulation(populations).gameDates!
+        return findFittestPopulation(populations)
         
     }
     
     
     func crossover(mother : Population, father : Population) -> ([Population]) {
+        
+        // General idea: don't switch individual games because some home games would end up on the same date.
+        //               crossover happens in slices, you either get all the hometeams for one team from mother or father
+        // Two-point crossover
         
         let teamCount = Population.teams!.count
         

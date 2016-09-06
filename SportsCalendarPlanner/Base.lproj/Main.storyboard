@@ -84,7 +84,6 @@
                                 <color key="backgroundColor" red="0.93725490570000003" green="0.93725490570000003" blue="0.95686274770000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <prototypes>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="blue" accessoryType="disclosureIndicator" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="seasonName" textLabel="yOV-h6-zxb" detailTextLabel="wC9-zA-beh" style="IBUITableViewCellStyleValue1" id="e2H-lO-yEg">
-                                        <frame key="frameInset" minY="56" width="320" height="44"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="e2H-lO-yEg" id="wMB-NI-rn4">
                                             <frame key="frameInset" width="287" height="43"/>
@@ -111,7 +110,6 @@
                                         </connections>
                                     </tableViewCell>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="seasonDate" textLabel="Opo-3q-sKe" detailTextLabel="BPT-QO-Ap2" style="IBUITableViewCellStyleValue1" id="hUF-b0-dOl">
-                                        <frame key="frameInset" minY="100" width="320" height="44"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="hUF-b0-dOl" id="xwM-6D-7Cd">
                                             <frame key="frameInset" width="320" height="43"/>
@@ -292,7 +290,6 @@
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <prototypes>
                             <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="season" textLabel="PKb-Yz-nod" style="IBUITableViewCellStyleDefault" id="Svg-Ql-fLK">
-                                <frame key="frameInset" minY="92" width="320" height="44"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="Svg-Ql-fLK" id="IyZ-ZH-ONt">
                                     <frame key="frameInset" width="320" height="43"/>
@@ -341,7 +338,6 @@
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <prototypes>
                             <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="team" textLabel="jOJ-wL-LSa" style="IBUITableViewCellStyleDefault" id="rm5-3g-L2R">
-                                <frame key="frameInset" minY="92" width="320" height="44"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="rm5-3g-L2R" id="6ee-QI-sXB">
                                     <frame key="frameInset" width="320" height="43"/>

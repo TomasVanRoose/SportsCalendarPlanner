@@ -15,7 +15,7 @@ class PlanSeasonViewController: UITableViewController {
     var managedObjectContext : NSManagedObjectContext?
     var datePickerView : SeasonViewPicker?
     
-    var population : Population?
+    //var population : Population?
     
     var otherTeams : [String]?
     var homeGameDates : [NSDate]?
@@ -26,7 +26,10 @@ class PlanSeasonViewController: UITableViewController {
         
         // Planner
         var teamManagedObjects = [TeamMO]()
-        var teamsWithDates = [String : [NSDate]]()
+        
+        var teams = [String]()
+        var datesForTeam = [[Int]]()
+        var numberOfDatesForTeam = [Int]()
         
         let teamRequest = NSFetchRequest(entityName: "Team")
         teamRequest.predicate = NSPredicate(format: "season == %@", self.season!)
@@ -41,26 +44,47 @@ class PlanSeasonViewController: UITableViewController {
                 dateRequest.predicate = NSPredicate(format: "team == %@", teamMO)
                 let dateManagedObjects = try self.managedObjectContext!.executeFetchRequest(dateRequest) as! [PlayableDateMO]
                 
-                var teamDates = [NSDate]()
+                teams.append(teamMO.name!)
+                
+                var dates = [Int]()
                 
                 for dateObject in dateManagedObjects {
-                    teamDates.append(dateObject.date!)
+                    let dateNumber = season!.startDate?.daysBetween(dateObject.date!)
+                    dates.append(dateNumber!)
                 }
                 
-                teamsWithDates[teamMO.name!] = teamDates
+                datesForTeam.append(dates)
+                numberOfDatesForTeam.append(dates.count)
             }
         } catch {
             fatalError("Could not fetch team or dates: \(error)")
         }
+    
         
-        let planner = Planner(teamsWithDates: teamsWithDates)
         
-        population = planner.planCalendar()
+        /* Create C style arrays to pass to C Library */
+        let pointerToDatesForTeam = UnsafeMutablePointer<UnsafeMutablePointer<Int32>>.alloc(teams.count)
+        let pointerToNumberOfDatesForTeam = UnsafeMutablePointer<Int32>.alloc(teams.count)
+        
+        for i in 0..<teams.count {
+            
+            let datesCount = numberOfDatesForTeam[i]
 
+            let pointerToDates = UnsafeMutablePointer<Int32>.alloc(datesCount)
+            for j in 0..<datesCount {
+                pointerToDates[j] = Int32(datesForTeam[i][j])
+            }
+            
+            pointerToDatesForTeam[i] = pointerToDates
+            pointerToNumberOfDatesForTeam[i] = Int32(datesCount)
+        }
+        
+        plan_calendar(pointerToDatesForTeam, pointerToNumberOfDatesForTeam, Int32(teams.count), 5, 30)
+        
     }
     
     func selectTeam(team : String) {
-        
+     /*
         if let pop = self.population {
             let teams = Population.teams
             self.otherTeams = teams!.filter { $0 != team }
@@ -68,6 +92,7 @@ class PlanSeasonViewController: UITableViewController {
             self.team = team
             self.tableView.reloadData()
         }
+ */
     }
     
     override func numberOfSectionsInTableView(tableView: UITableView) -> Int {
@@ -86,6 +111,7 @@ class PlanSeasonViewController: UITableViewController {
         return 2
     }
     
+    /*
     override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
         
         let cell : UITableViewCell
@@ -113,6 +139,6 @@ class PlanSeasonViewController: UITableViewController {
     }
     
     
-    
+    */
     
 }

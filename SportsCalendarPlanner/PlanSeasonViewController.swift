@@ -79,7 +79,10 @@ class PlanSeasonViewController: UITableViewController {
             pointerToNumberOfDatesForTeam[i] = Int32(datesCount)
         }
         
-        plan_calendar(pointerToDatesForTeam, pointerToNumberOfDatesForTeam, Int32(teams.count), 5, 30)
+        plan_calendar(pointerToDatesForTeam, pointerToNumberOfDatesForTeam, Int32(teams.count), 30, 5)
+        
+        
+        
         
     }
     

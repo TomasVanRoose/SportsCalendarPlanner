@@ -7,12 +7,13 @@
 //
 
 #include <stdlib.h>
+#include <time.h>
 
 #include "planner.h"
 #include "population.h"
 
-#define SIMULATION_SIZE 1000
-#define MUTATION_CHANCE 0.05
+#define SIMULATION_SIZE 200
+#define MUTATION_CHANCE 0.01
 
 
 #define GENERATION_SIZE 100
@@ -65,30 +66,10 @@ int index_of_max_element(double *array, int array_size) {
     return index;
 }
 
-void crossover(int *first_child, int *second_child, int *father, int *mother, int population_size, int team_size) {
-    
-    // General idea: don't switch individual games because some home games would end up on the same date.
-    //               crossover happens in slices, you either get all the hometeams for one team from mother or father
-    // Two-point crossover
-    
-    //get a value in [1..teamcount - 1]
-    int firstCrossOverPoint = arc4random_uniform(team_size - 2) + 1;
-    int secondCrossOverPoint = arc4random_uniform(team_size - (firstCrossOverPoint + 1)) + (firstCrossOverPoint + 1);
-    
-    for (int i = 0; i < population_size; i++) {
-        
-        if (i < (firstCrossOverPoint * (team_size - 1)) || (i >= secondCrossOverPoint * (team_size - 1))) {
-            first_child[i] = mother[i];
-            second_child[i] = father[i];
-        } else {
-            first_child[i] = father[i];
-            second_child[i] = mother[i];
-        }
-        
-    }
-}
 
 void plan_calendar(int **playable_dates_per_team, int *playable_date_sizes, int team_size, int prefered_days_between_returns, int prefered_days_between_consecutives) {
+    
+    srand(time(NULL));
     
     // one population will always be n(n-1) games
     int population_size = team_size * (team_size - 1);
@@ -122,7 +103,7 @@ void plan_calendar(int **playable_dates_per_team, int *playable_date_sizes, int 
             int father_index = index_of_tournament_selection_winner(TOURNAMENT_SIZE, generation_fitness, GENERATION_SIZE);
             int mother_index = index_of_tournament_selection_winner(TOURNAMENT_SIZE, generation_fitness, GENERATION_SIZE);
             
-            crossover(first_child, second_child, generation[father_index], generation[mother_index], population_size, team_size);
+            one_point_crossover(first_child, second_child, generation[father_index], generation[mother_index], population_size, team_size);
             
             mutate(MUTATION_CHANCE, first_child, population_size, playable_dates_per_team, playable_date_sizes, team_size);
             mutate(MUTATION_CHANCE, second_child, population_size, playable_dates_per_team, playable_date_sizes, team_size);
@@ -135,6 +116,8 @@ void plan_calendar(int **playable_dates_per_team, int *playable_date_sizes, int 
             
             amount_of_children++;
         }
+        
+        //printf("Max element of parents + children: %f\n", generation_fitness[index_of_max_element(generation_fitness, 2*GENERATION_SIZE)]);
         
         // pick survivors and move them to the first GEN_SIZE spot
         for (int i = 0; i < GENERATION_SIZE; i++) {
@@ -153,8 +136,8 @@ void plan_calendar(int **playable_dates_per_team, int *playable_date_sizes, int 
         }
         
         index_of_fittest = index_of_max_element(generation_fitness, GENERATION_SIZE);
-        printf("Generation %d:\t%f\n", k, generation_fitness[index_of_fittest]);
-        
+        printf("Generation %d:\t%d\t%f\n", k, index_of_fittest, generation_fitness[index_of_fittest]);
+                
     }
     
     for (int i = 0; i < 2*GENERATION_SIZE; i++) {

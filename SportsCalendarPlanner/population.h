@@ -16,5 +16,9 @@ int* generate_random_population(int **playable_dates, int *playable_date_sizes, 
 double fitness(int *population, int population_size, int team_size, int prefered_days_consecutive, int prefered_days_return);
 
 void mutate(float chance, int *population, int population_size, int **playable_dates, int *playable_date_sizes, int team_size);
+void one_point_crossover(int * first_child, int *second_child, int *father, int *mother, int population_size, int team_size);
+void two_point_crossover(int *first_child, int *second_child, int *father, int *mother, int population_size, int team_size);
+
+
 
 #endif /* population_h */

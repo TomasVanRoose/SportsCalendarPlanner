@@ -51,7 +51,7 @@ int* generate_random_population(int **playable_dates, int *playable_date_sizes, 
 double fitness(int *population, int population_size, int team_size, int prefered_days_consecutive, int prefered_days_return) {
     
     
-    double fitness;
+    double fitness = 0;
     
     // check for every game how far the closest game is
     for (int i = 0; i < population_size; i++) {
@@ -59,14 +59,18 @@ double fitness(int *population, int population_size, int team_size, int prefered
         int date = population[i];
         int least_days = INT_MAX;
         
-        for (int j = 0; j < team_size - 1; j++) {
+        int current_team_index = i / (team_size - 1);
+        
+        for (int j = 0; j < team_size; j++) {
             
             int other_date;
             
-            if (j < (i % (team_size - 1))) {
-                other_date = population[(j * (team_size - 1)) + (i / (team_size -1))];
+            if (j < current_team_index) {
+                other_date = population[(j * (team_size - 1)) + current_team_index - 1];
+            } else if (j == current_team_index) {
+                continue;
             } else {
-                other_date = population[j * (team_size - 1)];
+                other_date = population[j * (team_size - 1) + current_team_index];
             }
             
             int days_between = abs(date - other_date);
@@ -79,11 +83,49 @@ double fitness(int *population, int population_size, int team_size, int prefered
         if (least_days < prefered_days_consecutive) {
             fitness += pow((double)least_days / (double)prefered_days_consecutive * 100, 2);
         } else {
-            fitness += 9900 + (((double)least_days / (double)prefered_days_consecutive) * 100);
+            fitness += 10000;//9990 + ((double)least_days / (double)prefered_days_consecutive) * 10;
         }
     }
     
+    
     return fitness;
+    
+}
+
+void one_point_crossover(int * first_child, int *second_child, int *father, int *mother, int population_size, int team_size) {
+ 
+    int crossoverPoint = arc4random_uniform(team_size - 1) + 1;
+    
+    for (int i = 0; i < population_size; i++) {
+        if (i < crossoverPoint * (team_size - 1)) {
+            first_child[i] = mother[i];
+            second_child[i] = father[i];
+        } else {
+            first_child[i] = father[i];
+            second_child[i] = mother[i];
+        }
+    }
+    
+}
+
+
+void two_point_crossover(int *first_child, int *second_child, int *father, int *mother, int population_size, int team_size) {
+    
+    //get a value in [1..teamcount - 1]
+    int firstCrossOverPoint = arc4random_uniform(team_size - 2) + 1;
+    int secondCrossOverPoint = arc4random_uniform(team_size - (firstCrossOverPoint + 1)) + (firstCrossOverPoint + 1);
+    
+    for (int i = 0; i < population_size; i++) {
+        
+        if (i < (firstCrossOverPoint * (team_size - 1)) || (i >= secondCrossOverPoint * (team_size - 1))) {
+            first_child[i] = mother[i];
+            second_child[i] = father[i];
+        } else {
+            first_child[i] = father[i];
+            second_child[i] = mother[i];
+        }
+        
+    }
 }
 
 

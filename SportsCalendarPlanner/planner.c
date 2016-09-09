@@ -117,10 +117,19 @@ int* plan_calendar(int **playable_dates_per_team, int *playable_date_sizes, int 
             amount_of_children++;
         }
         
-        //printf("Max element of parents + children: %f\n", generation_fitness[index_of_max_element(generation_fitness, 2*GENERATION_SIZE)]);
+        index_of_fittest = index_of_max_element(generation_fitness, GENERATION_SIZE);
+        
+        // Keep best fit always for next generation
+        int *tmp = generation[index_of_fittest];
+        int fittmp = generation_fitness[index_of_fittest];
+        generation[index_of_fittest] = generation[0];
+        generation_fitness[index_of_fittest] = generation_fitness[0];
+        generation[0] = tmp;
+        generation_fitness[0] = fittmp;
+        
         
         // pick survivors and move them to the first GEN_SIZE spot
-        for (int i = 0; i < GENERATION_SIZE; i++) {
+        for (int i = 1; i < GENERATION_SIZE; i++) {
             
             int survivor_index = index_of_tournament_selection_winner(TOURNAMENT_SIZE, (generation_fitness + i), (GENERATION_SIZE*2) - i);
             
@@ -135,7 +144,6 @@ int* plan_calendar(int **playable_dates_per_team, int *playable_date_sizes, int 
             
         }
         
-        index_of_fittest = index_of_max_element(generation_fitness, GENERATION_SIZE);
         printf("Generation %d:\t%d\t%f\n", k, index_of_fittest, generation_fitness[index_of_fittest]);
                 
     }

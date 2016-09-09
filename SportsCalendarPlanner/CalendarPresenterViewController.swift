@@ -94,12 +94,27 @@ class CalendarPresenterViewController: UIViewController {
         }
     }
     
-    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
-        if let planViewController = segue.destinationViewController as? PlanSeasonViewController {
-            planViewController.managedObjectContext = self.managedObjectContext
-            planViewController.season = self.season
+    func didChooseCalendarValues(consecutiveGame : Int, returnGame : Int) {
+        
+        if let season = self.season {
+            if let managedObjectContext = self.managedObjectContext {
+                
+                var population = Population(daysBetweenConsecutiveGames: consecutiveGame, daysBetweenReturnGames: returnGame, season: season, managedObjectContext: managedObjectContext)
+            }
         }
+        let split = UISplitViewController()
+        
     }
     
+    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
+        /*if let planViewController = segue.destinationViewController as? PlanSeasonViewController {
+            planViewController.managedObjectContext = self.managedObjectContext
+            planViewController.season = self.season
+        }*/
+        if let dest = segue.destinationViewController as? PlanCalendarModalViewController {
+            dest.didSaveFunc = didChooseCalendarValues
+        }
 
+    }
+    
 }

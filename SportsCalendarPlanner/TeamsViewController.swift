@@ -76,6 +76,7 @@ class TeamsViewController: CoreDataTableViewController {
 
     // MARK: - Navigation
 
+
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
        
         if let destination = segue.destinationViewController as? UINavigationController {
@@ -83,7 +84,7 @@ class TeamsViewController: CoreDataTableViewController {
                 inputController.didInputFunc = didInputTeamName
             }
         }
-        
+               
     }
     
 

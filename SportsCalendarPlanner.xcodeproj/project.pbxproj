@@ -45,6 +45,14 @@
 		C372E4951D7C804A00353952 /* PlanSeasonViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C372E4931D7C804A00353952 /* PlanSeasonViewController.swift */; };
 		C3AF50621D81994B00291B88 /* planner.c in Sources */ = {isa = PBXBuildFile; fileRef = C3AF505F1D81994B00291B88 /* planner.c */; };
 		C3AF50631D81994B00291B88 /* population.c in Sources */ = {isa = PBXBuildFile; fileRef = C3AF50611D81994B00291B88 /* population.c */; };
+		C3AF50671D82FC7C00291B88 /* Game.swift in Sources */ = {isa = PBXBuildFile; fileRef = C3AF50661D82FC7C00291B88 /* Game.swift */; };
+		C3AF50681D82FC7C00291B88 /* Game.swift in Sources */ = {isa = PBXBuildFile; fileRef = C3AF50661D82FC7C00291B88 /* Game.swift */; };
+		C3AF506A1D8300AB00291B88 /* PlanCalendarModalViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C3AF50691D8300AB00291B88 /* PlanCalendarModalViewController.swift */; };
+		C3AF506B1D8300AB00291B88 /* PlanCalendarModalViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C3AF50691D8300AB00291B88 /* PlanCalendarModalViewController.swift */; };
+		C3AF506D1D8316EA00291B88 /* PlannedTeamsTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C3AF506C1D8316EA00291B88 /* PlannedTeamsTableViewController.swift */; };
+		C3AF506E1D8316EA00291B88 /* PlannedTeamsTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C3AF506C1D8316EA00291B88 /* PlannedTeamsTableViewController.swift */; };
+		C3AF50701D831B3A00291B88 /* Population.swift in Sources */ = {isa = PBXBuildFile; fileRef = C3AF506F1D831B3A00291B88 /* Population.swift */; };
+		C3AF50711D831B3A00291B88 /* Population.swift in Sources */ = {isa = PBXBuildFile; fileRef = C3AF506F1D831B3A00291B88 /* Population.swift */; };
 		C3B218521D7EB15100B022BC /* CreateSeasonViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C3B218511D7EB15100B022BC /* CreateSeasonViewController.swift */; };
 		C3B218531D7EB15100B022BC /* CreateSeasonViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C3B218511D7EB15100B022BC /* CreateSeasonViewController.swift */; };
 /* End PBXBuildFile section */
@@ -90,6 +98,10 @@
 		C3AF505F1D81994B00291B88 /* planner.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = planner.c; sourceTree = "<group>"; };
 		C3AF50601D81994B00291B88 /* population.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = population.h; sourceTree = "<group>"; };
 		C3AF50611D81994B00291B88 /* population.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = population.c; sourceTree = "<group>"; };
+		C3AF50661D82FC7C00291B88 /* Game.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Game.swift; sourceTree = "<group>"; };
+		C3AF50691D8300AB00291B88 /* PlanCalendarModalViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PlanCalendarModalViewController.swift; sourceTree = "<group>"; };
+		C3AF506C1D8316EA00291B88 /* PlannedTeamsTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PlannedTeamsTableViewController.swift; sourceTree = "<group>"; };
+		C3AF506F1D831B3A00291B88 /* Population.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Population.swift; sourceTree = "<group>"; };
 		C3B218511D7EB15100B022BC /* CreateSeasonViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CreateSeasonViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -136,8 +148,12 @@
 				C35631C31D7B24F4002A22C4 /* SeasonsTableViewController.swift */,
 				C3352BC11D7C2A4900D10A9D /* TeamsViewController.swift */,
 				C32841841D7C50B800AAD930 /* CalendarPresenterViewController.swift */,
-				C372E4931D7C804A00353952 /* PlanSeasonViewController.swift */,
+				C3AF506C1D8316EA00291B88 /* PlannedTeamsTableViewController.swift */,
+				C3AF50691D8300AB00291B88 /* PlanCalendarModalViewController.swift */,
 				C356319E1D7B1EB8002A22C4 /* Main.storyboard */,
+				C372E4931D7C804A00353952 /* PlanSeasonViewController.swift */,
+				C3AF506F1D831B3A00291B88 /* Population.swift */,
+				C3AF50661D82FC7C00291B88 /* Game.swift */,
 				C3AF50651D81AF0700291B88 /* Genetic Algorithm */,
 				C3B218511D7EB15100B022BC /* CreateSeasonViewController.swift */,
 				C3352BBE1D7C1C9A00D10A9D /* InputTableViewController.swift */,
@@ -315,6 +331,8 @@
 				C3352BBF1D7C1C9A00D10A9D /* InputTableViewController.swift in Sources */,
 				C35631D01D7B5091002A22C4 /* SeasonMO+CoreDataProperties.swift in Sources */,
 				C356319B1D7B1EB7002A22C4 /* AppDelegate.swift in Sources */,
+				C3AF506A1D8300AB00291B88 /* PlanCalendarModalViewController.swift in Sources */,
+				C3AF50701D831B3A00291B88 /* Population.swift in Sources */,
 				C328418A1D7C522C00AAD930 /* DateExtension.swift in Sources */,
 				C3352BCE1D7C384500D10A9D /* TeamMO.swift in Sources */,
 				C35631D61D7B542B002A22C4 /* CoreDataTableViewController.swift in Sources */,
@@ -326,6 +344,8 @@
 				C31DD6151D7C66180020FFA7 /* PlayableDateMO.swift in Sources */,
 				C3B218521D7EB15100B022BC /* CreateSeasonViewController.swift in Sources */,
 				C31DD6131D7C66180020FFA7 /* PlayableDateMO+CoreDataProperties.swift in Sources */,
+				C3AF506D1D8316EA00291B88 /* PlannedTeamsTableViewController.swift in Sources */,
+				C3AF50671D82FC7C00291B88 /* Game.swift in Sources */,
 				C3352BC21D7C2A4900D10A9D /* TeamsViewController.swift in Sources */,
 				C35631C41D7B24F4002A22C4 /* SeasonsTableViewController.swift in Sources */,
 				C3AF50631D81994B00291B88 /* population.c in Sources */,
@@ -338,7 +358,9 @@
 			buildActionMask = 2147483647;
 			files = (
 				C32841861D7C50B800AAD930 /* CalendarPresenterViewController.swift in Sources */,
+				C3AF50681D82FC7C00291B88 /* Game.swift in Sources */,
 				C31DD6161D7C66180020FFA7 /* PlayableDateMO.swift in Sources */,
+				C3AF50711D831B3A00291B88 /* Population.swift in Sources */,
 				C328418B1D7C522C00AAD930 /* DateExtension.swift in Sources */,
 				C3352BC01D7C1C9A00D10A9D /* InputTableViewController.swift in Sources */,
 				C35631C51D7B24F4002A22C4 /* SeasonsTableViewController.swift in Sources */,
@@ -347,6 +369,7 @@
 				C35631D31D7B5091002A22C4 /* SeasonMO.swift in Sources */,
 				C3352BCF1D7C384500D10A9D /* TeamMO.swift in Sources */,
 				C35631D71D7B542B002A22C4 /* CoreDataTableViewController.swift in Sources */,
+				C3AF506E1D8316EA00291B88 /* PlannedTeamsTableViewController.swift in Sources */,
 				C372E4951D7C804A00353952 /* PlanSeasonViewController.swift in Sources */,
 				C3352BC31D7C2A4900D10A9D /* TeamsViewController.swift in Sources */,
 				C35631D11D7B5091002A22C4 /* SeasonMO+CoreDataProperties.swift in Sources */,
@@ -354,6 +377,7 @@
 				C31DD6141D7C66180020FFA7 /* PlayableDateMO+CoreDataProperties.swift in Sources */,
 				C328418F1D7C522C00AAD930 /* SeasonViewPicker.swift in Sources */,
 				C3B218531D7EB15100B022BC /* CreateSeasonViewController.swift in Sources */,
+				C3AF506B1D8300AB00291B88 /* PlanCalendarModalViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

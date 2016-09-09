@@ -79,10 +79,20 @@ class PlanSeasonViewController: UITableViewController {
             pointerToNumberOfDatesForTeam[i] = Int32(datesCount)
         }
         
-        plan_calendar(pointerToDatesForTeam, pointerToNumberOfDatesForTeam, Int32(teams.count), 30, 5)
+        let solution : UnsafeMutablePointer<Int32> = plan_calendar(pointerToDatesForTeam, pointerToNumberOfDatesForTeam, Int32(teams.count), 15, 5)
         
         
+        solution.destroy()
+        solution.dealloc((teams.count - 1) * teams.count)
         
+        for i in 0..<teams.count {
+            pointerToDatesForTeam[i].destroy()
+            pointerToDatesForTeam[i].dealloc(numberOfDatesForTeam[i])
+        }
+        pointerToDatesForTeam.destroy()
+        pointerToDatesForTeam.dealloc(teams.count)
+        pointerToNumberOfDatesForTeam.destroy()
+        pointerToNumberOfDatesForTeam.dealloc(teams.count)
         
     }
     

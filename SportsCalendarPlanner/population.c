@@ -50,7 +50,6 @@ int* generate_random_population(int **playable_dates, int *playable_date_sizes, 
 
 double fitness(int *population, int population_size, int team_size, int prefered_days_consecutive, int prefered_days_return) {
     
-    
     double fitness = 0;
     
     // check for every game how far the closest game is
@@ -87,7 +86,35 @@ double fitness(int *population, int population_size, int team_size, int prefered
         }
     }
     
+    if (fitness < 10000 * population_size) {
+        return fitness;
+    }
     
+    int i = 0,j = 0,k = 0;
+    while (i < population_size) {
+        
+        int homeDate = population[i];
+        int awayDate = population[(j + 1) * (team_size - 1) + k];
+        
+        int daysBetween = abs(homeDate - awayDate);
+        
+        // Value between 0 and 10.000
+        if (daysBetween < prefered_days_return){
+            fitness += pow(((double)daysBetween / (double)prefered_days_return) * 100, 2);
+        } else  {
+            fitness += 9900 + (((double)daysBetween / (double)prefered_days_return) * 100);
+        }
+        
+        i += 1;
+        j += 1;
+        if (i % (team_size - 1) == 0){
+            i += (i / (team_size - 1));
+            k = i;
+            j = 0;
+        }
+        
+    }
+
     return fitness;
     
 }

@@ -67,9 +67,9 @@ int index_of_max_element(double *array, int array_size) {
 }
 
 
-void plan_calendar(int **playable_dates_per_team, int *playable_date_sizes, int team_size, int prefered_days_between_returns, int prefered_days_between_consecutives) {
+int* plan_calendar(int **playable_dates_per_team, int *playable_date_sizes, int team_size, int prefered_days_between_returns, int prefered_days_between_consecutives) {
     
-    srand(time(NULL));
+    srand((uint)time(NULL));
     
     // one population will always be n(n-1) games
     int population_size = team_size * (team_size - 1);
@@ -141,8 +141,13 @@ void plan_calendar(int **playable_dates_per_team, int *playable_date_sizes, int 
     }
     
     for (int i = 0; i < 2*GENERATION_SIZE; i++) {
-        free(generation[i]);
+        if (i != index_of_fittest) {
+            free(generation[i]);
+        }
     }
+    
+    return generation[index_of_fittest];
+    
 }
 
 

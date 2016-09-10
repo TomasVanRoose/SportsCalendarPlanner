@@ -12,6 +12,8 @@ class PlannedTeamsTableViewController: UITableViewController {
 
     let teams : [String]
     
+    var plannedPresenter : PlannedCalendarPresenterViewController?
+    
     required init?(coder aDecoder: NSCoder) {
         teams = [String]()
         super.init(coder: aDecoder)
@@ -37,5 +39,8 @@ class PlannedTeamsTableViewController: UITableViewController {
         return cell!
     }
     
+    override func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
+        plannedPresenter?.selectTeam(teams[indexPath.row])
+    }
     
 }

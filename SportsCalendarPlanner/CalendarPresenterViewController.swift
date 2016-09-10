@@ -27,7 +27,7 @@ class CalendarPresenterViewController: UIViewController {
         
         self.season = season
         
-        let frame = CGRect(x: 10, y: 20, width: self.view.frame.size.width, height: self.view.bounds.size.height);
+        let frame = CGRect(x: 10, y: 40, width: self.view.frame.size.width, height: self.view.bounds.size.height);
         self.datePickerView = SeasonViewPicker.init(frame: frame, beginDate: season.startDate!, endDate: season.endDate!, dateFunc: didSelectDate)
         
         self.view.addSubview(self.datePickerView!)
@@ -99,18 +99,28 @@ class CalendarPresenterViewController: UIViewController {
         if let season = self.season {
             if let managedObjectContext = self.managedObjectContext {
                 
-                var population = Population(daysBetweenConsecutiveGames: consecutiveGame, daysBetweenReturnGames: returnGame, season: season, managedObjectContext: managedObjectContext)
+                let population = Population(daysBetweenConsecutiveGames: consecutiveGame, daysBetweenReturnGames: returnGame, season: season, managedObjectContext: managedObjectContext)
+                
+                let teamsTVC = PlannedTeamsTableViewController(teams: population.teams)
+                let presenter = PlannedCalendarPresenterViewController()
+                presenter.population = population
+                presenter.view.backgroundColor = UIColor.whiteColor()
+                teamsTVC.plannedPresenter = presenter
+                
+                let navigationController = UINavigationController(rootViewController: teamsTVC)
+                let navPresenterController = UINavigationController(rootViewController: presenter)
+                let split = UISplitViewController()
+                split.viewControllers = [ navigationController, navPresenterController]
+                
+                presentViewController(split, animated: true, completion: nil)
             }
         }
-        let split = UISplitViewController()
+        
         
     }
     
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
-        /*if let planViewController = segue.destinationViewController as? PlanSeasonViewController {
-            planViewController.managedObjectContext = self.managedObjectContext
-            planViewController.season = self.season
-        }*/
+
         if let dest = segue.destinationViewController as? PlanCalendarModalViewController {
             dest.didSaveFunc = didChooseCalendarValues
         }

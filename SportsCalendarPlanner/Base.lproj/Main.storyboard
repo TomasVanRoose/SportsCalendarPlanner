@@ -70,7 +70,7 @@
                                 <textInputTraits key="textInputTraits" keyboardType="numberPad"/>
                             </textField>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="sFg-By-gFG">
-                                <frame key="frameInset" minX="361" minY="424" width="97" height="30"/>
+                                <frame key="frameInset" minX="355" minY="257" width="97" height="30"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <state key="normal" title="Plan calendar!"/>
                                 <connections>
@@ -78,7 +78,7 @@
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Mg3-za-ZPm">
-                                <frame key="frameInset" minX="100" minY="424" width="57" height="30"/>
+                                <frame key="frameInset" minX="101" minY="257" width="57" height="30"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <state key="normal" title="Go back"/>
                                 <connections>
@@ -103,7 +103,7 @@
             <objects>
                 <navigationController id="eoC-aP-dHa" sceneMemberID="viewController">
                     <splitViewMasterSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="bjz-4H-ktG">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" misplaced="YES" id="bjz-4H-ktG">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
@@ -430,7 +430,7 @@
         <scene sceneID="zkf-QU-buu">
             <objects>
                 <navigationController id="0F8-u2-jy1" sceneMemberID="viewController">
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="DhZ-2g-EoJ">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" misplaced="YES" id="DhZ-2g-EoJ">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
@@ -460,7 +460,7 @@
             <objects>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="kbu-ra-Q7u" sceneMemberID="viewController">
                     <toolbarItems/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="gqX-fv-FlY">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" misplaced="YES" id="gqX-fv-FlY">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
@@ -479,7 +479,7 @@
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="oV7-DN-Vgo" sceneMemberID="viewController">
                     <toolbarItems/>
                     <splitViewDetailSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="QQe-Ot-lDr">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" misplaced="YES" id="QQe-Ot-lDr">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>

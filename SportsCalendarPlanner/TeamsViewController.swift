@@ -30,8 +30,6 @@ class TeamsViewController: CoreDataTableViewController {
         
         if let detail = detailViewController as? CalendarPresenterViewController {
             detail.selectTeam(team)
-        } else if let detail = detailViewController as? PlanSeasonViewController {
-            detail.selectTeam(team.name!)
         }
     }
 

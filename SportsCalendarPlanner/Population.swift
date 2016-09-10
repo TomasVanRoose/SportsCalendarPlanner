@@ -15,7 +15,25 @@ class Population {
     
     var games : [Game]
     
+    let beginDate : NSDate
+    let endDate : NSDate
+    
+    func getAllHomeGamesForTeam(team : String) -> [Game] {
+        return self.games.filter() {
+            $0.homeTeam == team
+        }
+    }
+    
+    func getAllAwayGamesForTeam(team: String) -> [Game] {
+        return self.games.filter() {
+            $0.awayTeam == team
+        }
+    }
+    
     init(daysBetweenConsecutiveGames : Int, daysBetweenReturnGames : Int, season : SeasonMO, managedObjectContext : NSManagedObjectContext) {
+        
+        beginDate = season.startDate!
+        endDate = season.endDate!
         
         teams = [String]()
         var teamManagedObjects = [TeamMO]()
@@ -72,7 +90,7 @@ class Population {
             pointerToNumberOfDatesForTeam[i] = Int32(datesCount)
         }
         
-        let solution : UnsafeMutablePointer<Int32> = plan_calendar(pointerToDatesForTeam, pointerToNumberOfDatesForTeam, Int32(teams.count), 15, 5)
+        let solution : UnsafeMutablePointer<Int32> = plan_calendar(pointerToDatesForTeam, pointerToNumberOfDatesForTeam, Int32(teams.count), Int32(daysBetweenConsecutiveGames), Int32(daysBetweenReturnGames))
      
         self.games = [Game]()
         let dayComponent = NSDateComponents()

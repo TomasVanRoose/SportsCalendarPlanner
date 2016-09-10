@@ -19,8 +19,8 @@ class PlanCalendarModalViewController: UIViewController {
         if let saveFunc = self.didSaveFunc {
             if let cons = self.consecutiveTextField.text {
                 if let ret = self.returnTextField.text {
-                    saveFunc(consecutiveGame: Int(cons)!, returnGame: Int(ret)!)
                     dismissViewControllerAnimated(true, completion: nil)
+                    saveFunc(consecutiveGame: Int(cons)!, returnGame: Int(ret)!)
                 }
             }
         }

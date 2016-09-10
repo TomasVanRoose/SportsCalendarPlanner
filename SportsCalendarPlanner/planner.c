@@ -131,7 +131,7 @@ int* plan_calendar(int **playable_dates_per_team, int *playable_date_sizes, int 
         // pick survivors and move them to the first GEN_SIZE spot
         for (int i = 1; i < GENERATION_SIZE; i++) {
             
-            int survivor_index = index_of_tournament_selection_winner(TOURNAMENT_SIZE, (generation_fitness + i), (GENERATION_SIZE*2) - i);
+            int survivor_index = index_of_tournament_selection_winner(TOURNAMENT_SIZE, (generation_fitness + i), (GENERATION_SIZE*2) - i) + i;
             
             int *tmp_survivor = generation[survivor_index];
             int tmp_fitness = generation_fitness[survivor_index];

@@ -55,6 +55,7 @@ double fitness(int *population, int population_size, int team_size, int prefered
     // check for every game how far the closest game is
     for (int i = 0; i < population_size; i++) {
         
+        
         int date = population[i];
         int least_days = INT_MAX;
         
@@ -79,10 +80,30 @@ double fitness(int *population, int population_size, int team_size, int prefered
             }
         }
         
+        for (int j = 0; j < team_size; j++) {
+            int other_date_index;
+            
+            other_date_index = (j * (team_size - 1)) + (i % (team_size -1));
+            
+            if (i == other_date_index) {
+                continue;
+            }
+            
+            int other_date = population[other_date_index];
+            
+            int days_between = abs(date - other_date);
+            
+            if (days_between < least_days) {
+                least_days = days_between;
+            }
+
+        }
+        
+        
         if (least_days < prefered_days_consecutive) {
             fitness += pow((double)least_days / (double)prefered_days_consecutive * 100, 2);
         } else {
-            fitness += 10000;//9990 + ((double)least_days / (double)prefered_days_consecutive) * 10;
+            fitness += 9990 + ((double)least_days / (double)prefered_days_consecutive) * 10;
         }
     }
     

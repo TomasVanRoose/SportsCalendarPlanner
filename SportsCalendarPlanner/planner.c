@@ -12,11 +12,11 @@
 #include "planner.h"
 #include "population.h"
 
-#define SIMULATION_SIZE 200
+#define SIMULATION_SIZE 500
 #define MUTATION_CHANCE 0.01
 
 
-#define GENERATION_SIZE 100
+#define GENERATION_SIZE 1000
 #define TOURNAMENT_SIZE 2
 
 
@@ -67,7 +67,7 @@ int index_of_max_element(double *array, int array_size) {
 }
 
 
-int* plan_calendar(int **playable_dates_per_team, int *playable_date_sizes, int team_size, int prefered_days_between_returns, int prefered_days_between_consecutives) {
+int* plan_calendar(int **playable_dates_per_team, int *playable_date_sizes, int team_size, int prefered_days_between_consecutives, int prefered_days_between_returns) {
     
     srand((uint)time(NULL));
     
@@ -81,7 +81,7 @@ int* plan_calendar(int **playable_dates_per_team, int *playable_date_sizes, int 
     for (int i = 0; i < GENERATION_SIZE; i++) {
     
         int *random_population = generate_random_population(playable_dates_per_team, playable_date_sizes, team_size);
-        generation_fitness[i] = fitness(random_population, population_size, team_size, prefered_days_between_returns, prefered_days_between_consecutives);
+        generation_fitness[i] = fitness(random_population, population_size, team_size, prefered_days_between_consecutives, prefered_days_between_returns);
         generation[i] = random_population;
     }
     
@@ -108,16 +108,16 @@ int* plan_calendar(int **playable_dates_per_team, int *playable_date_sizes, int 
             mutate(MUTATION_CHANCE, first_child, population_size, playable_dates_per_team, playable_date_sizes, team_size);
             mutate(MUTATION_CHANCE, second_child, population_size, playable_dates_per_team, playable_date_sizes, team_size);
 
-            generation_fitness[amount_of_children + GENERATION_SIZE] = fitness(first_child, population_size, team_size, prefered_days_between_consecutives, prefered_days_between_consecutives);
+            generation_fitness[amount_of_children + GENERATION_SIZE] = fitness(first_child, population_size, team_size, prefered_days_between_consecutives, prefered_days_between_returns);
             
             amount_of_children++;
             
-            generation_fitness[amount_of_children + GENERATION_SIZE] = fitness(second_child, population_size, team_size, prefered_days_between_consecutives, prefered_days_between_consecutives);
+            generation_fitness[amount_of_children + GENERATION_SIZE] = fitness(second_child, population_size, team_size, prefered_days_between_consecutives, prefered_days_between_returns);
             
             amount_of_children++;
         }
         
-        index_of_fittest = index_of_max_element(generation_fitness, GENERATION_SIZE);
+        index_of_fittest = index_of_max_element(generation_fitness, GENERATION_SIZE * 2);
         
         // Keep best fit always for next generation
         int *tmp = generation[index_of_fittest];
@@ -144,17 +144,18 @@ int* plan_calendar(int **playable_dates_per_team, int *playable_date_sizes, int 
             
         }
         
-        printf("Generation %d:\t%d\t%f\n", k, index_of_fittest, generation_fitness[index_of_fittest]);
+        printf("Generation %d:\t%d\t%f\n", k, index_of_fittest, generation_fitness[0]);
                 
     }
     
-    for (int i = 0; i < 2*GENERATION_SIZE; i++) {
-        if (i != index_of_fittest) {
-            free(generation[i]);
-        }
+    fitness(generation[0], population_size, team_size, prefered_days_between_consecutives, prefered_days_between_returns);
+    
+    for (int i = 1; i < 2*GENERATION_SIZE; i++) {
+        free(generation[i]);
+        
     }
     
-    return generation[index_of_fittest];
+    return generation[0];
     
 }
 
